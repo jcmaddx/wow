@@ -1,5 +1,10 @@
+# generated next.js files
+.next/
+
+# mac garbage
 .DS_Store
+
+# npm
 node_modules/
 package-lock.json
-.next/
 npm-debug.log
