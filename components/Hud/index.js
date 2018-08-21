@@ -5,7 +5,7 @@ import ActionBar from './ActionBar'
 
 const Hud = (props) => (
 	<div id="hud">
-		<Player />
+		<Player health={props.character.stats.health} mana={props.character.stats.power} name={props.character.name} level={props.character.level} />
 		<MiniMap />
 		<Chat />
 		<ActionBar />

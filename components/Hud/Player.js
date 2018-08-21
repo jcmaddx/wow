@@ -1,5 +1,14 @@
-const Player = (props) => (
-	<div id="player">Player Frame</div>
-)
+import "./player.scss"
+const Player = (props) => {
+	return(
+		<div id="player">
+			<div className="image"></div>
+			<div className="name">{props.name}</div>
+			<div className="bar health"><span>100%</span>{parseInt(props.health).toLocaleString()}</div>
+			<div className="bar mana"><span>100%</span>{parseInt(props.mana).toLocaleString()}</div>
+			<div className="level">{props.level}</div>
+		</div>
+	)
+}
 
 export default Player

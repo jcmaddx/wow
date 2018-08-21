@@ -8,7 +8,7 @@ import ActionBar from '../components/Hud/ActionBar'
 
 storiesOf('Hud', module)
   .add('Player Frame', () => (
-    <Player />
+    <Player health="100000" mana="99999" name="Character Name" level="120" />
   ))
   .add('Minimap', () => (
     <MiniMap />

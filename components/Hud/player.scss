@@ -1,0 +1,63 @@
+@import "../../pages/global.scss";
+@import "../../static/fonts/fonts.scss";
+#player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 85px;
+	background: url(/static/images/hud/player/img_player-frame.png) no-repeat center center;
+	font-family: "friz";
+	.image {
+		position: absolute;
+		top: 7px;
+		left: 9px;
+		width: 60px;
+		height: 60px;
+		background: url(/static/images/hud/player/portrait.png) no-repeat center center;
+		z-index: -1;
+		display: block;
+	}
+	.name {
+		position: absolute;
+		top: 16px;
+    left: 72px;
+    height: 18px;
+    line-height: 18px;
+    width: 118px;
+    color: $gold;
+    font-size: 12px;
+    text-align: center;
+	}
+	.bar {
+		color: white;
+		font-size: 9px;
+		text-align: right;
+		position: absolute;
+		left: 72px;
+		width: 110px;
+		line-height: 10px;
+		height: 10px;
+		letter-spacing: 1px;
+		text-shadow: 0px 0px 3px black;
+		&.health {
+			top: 36px;
+		}
+		&.mana {
+			top: 47px;
+		}
+		span {
+			position: absolute;
+			left: 5px;
+		}
+	}
+	.level {
+		color: $gold;
+		position: absolute;
+		width: 22px;
+		height: 15px;
+		top: 54px;
+		left: 9px;
+		font-size: 11px;
+	}
+}
