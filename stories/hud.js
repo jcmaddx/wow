@@ -1,9 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions'
 import Player from '../components/Hud/Player'
 import MiniMap from '../components/Hud/MiniMap'
-import Chat from '../components/Hud/Chat';
+import Chat from '../components/Hud/Chat'
+import ChatBubble from '../components/Hud/ChatBubble'
 import ActionBar from '../components/Hud/ActionBar'
 
 storiesOf('Hud', module)
@@ -12,6 +13,9 @@ storiesOf('Hud', module)
   ))
   .add('Minimap', () => (
     <MiniMap />
+  ))
+  .add('Chat Bubble', () => (
+    <ChatBubble text="heya"/>
   ))
   .add('Chat', () => (
     <Chat />
