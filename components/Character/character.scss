@@ -1,0 +1,55 @@
+@import "../../pages/global.scss";
+.character {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top left;
+	&.cheer {
+		left: calc(50% + 5px);
+		height: 830px;
+		width: 465px;
+		background-image: url('/static/images/character/cheer.png');
+		animation: emote 2.5s steps(49) infinite;
+	}
+	&.stand {
+		height: 535px;
+		width: 279px;
+		background-image: url('/static/images/character/stand.png');
+		animation: emote 2.65s steps(52) infinite;
+	}
+	&.cry {
+		left: calc(50% + 3px);
+		height: 525px;
+		width: 310px;
+		background-image: url('/static/images/character/cry.png');
+		animation: emote 4.25s steps(85) infinite;
+	}
+	&.laugh {
+		left: calc(50% - 1px);
+		height: 535px;
+		width: 280px;
+		background-image: url('/static/images/character/laugh.png');
+		animation: emote 3.3s steps(65) infinite;
+	}
+	&.beg {
+		left: calc(50% + 4px);
+		height: 529px;
+		width: 311px;
+		background-image: url('/static/images/character/beg.png');
+		animation: emote 4.7s steps(93) infinite;
+	}
+	&.talk {
+		left: calc(50% + 24px);
+		height: 535px;
+		width: 345px;
+		background-image: url('/static/images/character/talk.png');
+		animation: emote 2s steps(39) infinite;
+	}
+}
+
+@keyframes emote {
+	100% { background-position: right top;}
+}
