@@ -1,7 +1,7 @@
 // import sidebar component
 import SideNav from '../SideNav'
 import Header from './Header'
-const MainLayout = (props) => (
+const AchievementPane = (props) => (
   <div id="main">
   	<SideNav />
   	<Header />
@@ -9,4 +9,4 @@ const MainLayout = (props) => (
   </div>
 )
 
-export default MainLayout
+export default AchievementPane

@@ -3,6 +3,7 @@
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: top left;
+	backface-visibility: hidden;
 	&#character-main {
 		position: absolute;
 		left: 50%;
