@@ -2,7 +2,7 @@ import Player from './Player'
 import MiniMap from './MiniMap'
 import Chat from './Chat';
 import ChatBubble from './ChatBubble';
-import ActionBar from './ActionBar'
+import ActionBar from '../ActionBar'
 
 const Hud = (props) => (
 	<div id="hud">

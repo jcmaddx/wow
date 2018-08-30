@@ -17,9 +17,9 @@ storiesOf('Hud', module)
   .add('Chat Bubble', () => (
     <ChatBubble text="heya"/>
   ))
+  .add('Action Bar', () => (
+    <ActionBar />
+  ))
   .add('Chat', () => (
     <Chat />
-  ))
-  .add('Action Bars', () => (
-    <ActionBar />
   ));  

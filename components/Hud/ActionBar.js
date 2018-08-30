@@ -1,28 +1,25 @@
-import './bar.scss'
+import './actionBar.scss'
+import Icon from '../Icon'
+import skills from '../../data/skills.json'
 const ActionBar = (props) => (
 	<div id="actionbar">
 		<div className="bar-frame">
 			<div className="skills">
 				<div className="primary">
-					<div className="skill"><img src="/static/images/icons/bars/immolate.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/conflagrate.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/incinerate.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/chaos.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/havoc.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/rain.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/void.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/infernal.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/soulstone.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/healthstone.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/funnel.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/siphon.png" /></div>
+					{
+						Object.keys(skills.primary).map((i, key) => {
+							let item = skills.primary[i];
+							return <Icon type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
+						})
+					}
 				</div>
 				<div className="secondary">
-					<div className="skill"><img src="/static/images/icons/bars/burn.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/ritual.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/portal.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/dalaran.png" /></div>
-					<div className="skill"><img src="/static/images/icons/bars/hearth.png" /></div>
+					{
+						Object.keys(skills.secondary).map((i, key) => {
+							let item = skills.secondary[i];
+							return <Icon type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
+						})
+					}
 				</div>
 			</div>
 		</div>

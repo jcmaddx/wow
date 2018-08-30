@@ -1,0 +1,73 @@
+{
+	"primary": {
+		"immolate":{
+			"image": "/static/images/icons/bars/immolate.png",
+			"keybind": "1"
+		},
+		"conflagrate":{
+			"image": "/static/images/icons/bars/conflagrate.png",
+			"keybind": "2",
+			"uses": "2"
+		},
+		"incinerate":{
+			"image": "/static/images/icons/bars/incinerate.png",
+			"keybind": "3"
+		},
+		"chaos":{
+			"image": "/static/images/icons/bars/chaos.png",
+			"keybind": "4"
+		},
+		"havoc":{
+			"image": "/static/images/icons/bars/havoc.png",
+			"keybind": "5"
+		},
+		"rain":{
+			"image": "/static/images/icons/bars/rain.png",
+			"keybind": "6"
+		},
+		"void":{
+			"image": "/static/images/icons/bars/void.png",
+			"keybind": "7"
+		},
+		"infernal":{
+			"image": "/static/images/icons/bars/infernal.png",
+			"keybind": "8"
+		},
+		"soulstone":{
+			"image": "/static/images/icons/bars/soulstone.png",
+			"keybind": "9"
+		},
+		"healthstone":{
+			"image": "/static/images/icons/bars/healthstone.png",
+			"uses": "3",
+			"keybind": "0"
+		},
+		"funnel":{
+			"image": "/static/images/icons/bars/funnel.png",
+			"keybind": "-"
+		},
+		"siphon":{
+			"image": "/static/images/icons/bars/siphon.png",
+			"keybind": "="
+		}
+	},
+	"secondary": {
+		"burn":{
+			"image": "/static/images/icons/bars/burn.png"
+		},
+		"ritual":{
+			"image": "/static/images/icons/bars/ritual.png"
+		},
+		"portal":{
+			"image": "/static/images/icons/bars/portal.png"
+		},
+		"dalaran":{
+			"image": "/static/images/icons/bars/dalaran.png",
+			"keybind": "J"
+		},
+		"hearth":{
+			"image": "/static/images/icons/bars/hearth.png",
+			"keybind": "V"
+		}
+	}
+}
