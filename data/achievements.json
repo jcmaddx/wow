@@ -1,56 +1,364 @@
-[
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
+{
+	"summary": {
+		"title": "Welcome!",
+		"content": [
+			"Thank you for visiting my interactive resume. There's quite a few things to look at, so let's get started.",
+			"This site was built using React.js through the Next.js framework.  It was styled using SCSS and Storybook.js.",
+			"There are several ways you can interact with the site.  The most simple interaction is that you can browse my 'Achievements' here in this panel.",
+			"You can also press the 'Y' key to close and reopen this panel to gain access to the screen behind the panel.",
+			"You may click or press the keybinds to try and use skills on the action bar, and can press '/' or the enter key to gain access to the chat box.",
+			"Once in the chat box, you can try out some of the emotes from WoW such as '/laugh' and '/cry', or just have the character say a phrase.",
+			"Thanks for visiting, I hope you enjoy your experience!"
+		]
 	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	},
-	{
-		"title": "A thing",
-		"icon": "an icon",
-		"date": "some date",
-		"isSpecial": true
-	}
-]
+	"skills" : [
+		{
+			"title": "Basic Building Block",
+			"description": "You can build any layout with HTML",
+			"icon": "/static/images/icons/achievements/skills/html.png",
+			"points": 20,
+			"date": "10/20/13",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Cascading with Style",
+			"description": "You can make web pages look nice with CSS and SCSS",
+			"icon": "/static/images/icons/achievements/skills/css2.png",
+			"points": 30,
+			"date": "3/13/14",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Hot Java ... script",
+			"description": "You can bend the DOM to your will with Javascript.",
+			"icon": "/static/images/icons/achievements/skills/js.png",
+			"points": 50,
+			"date": "04/09/16",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Time to React.js",
+			"description": "More than just a website, now it can React",
+			"icon": "/static/images/icons/achievements/skills/react.png",
+			"points": 100,
+			"date": "11/15/16",
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Pushing Pixels",
+			"description": "You are proficient at image manipulation with Photoshop.",
+			"icon": "/static/images/icons/achievements/skills/photoshop.png",
+			"points": 50,
+			"date": "11/11/14",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "The Darkest Arts",
+			"description": "You are ok at manipulating the back end with Php.",
+			"icon": "/static/images/icons/achievements/skills/php.png",
+			"points": 50,
+			"date": "10/20/13",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Shop till You Drop",
+			"description": "You can create e-commerce solutions with Magento.",
+			"icon": "/static/images/icons/achievements/skills/magento.png",
+			"points": 40,
+			"date": "05/13/14",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Pressing the Words",
+			"description": "You've made a lot of (enough) sites with WordPress..",
+			"icon": "/static/images/icons/achievements/skills/wordpress.png",
+			"points": 20,
+			"date": "04/20/12",
+			"special": false,
+			"unearned": false
+		}
+	],
+	"professions" : [
+		{
+			"title": "NCSoft",
+			"description": "Korean MMO Giant. Using: React.js, Redux, Webpack, Grunt, Jekyll",
+			"icon": "/static/images/icons/achievements/jobs/ncsoft.png",
+			"points": 100,
+			"date": "08/21/16",
+			"special": true,
+			"unearned": false,
+			"reward": "Title: Sr. Front-end Engineer"
+		},
+		{
+			"title": "Luckie and Co.",
+			"description": "Marketing Firm. Using: Wordpress, Less, Wordpress (too much)",
+			"icon": "/static/images/icons/achievements/jobs/luckie.png",
+			"points": 50,
+			"date": "10/18/15",
+			"special": false,
+			"unearned": false,
+			"reward": "Title: Front-end Engineer"
+		},
+		{
+			"title": "EBSCO Industries",
+			"description": "Outdoor company E-Commerce. Using: Wordpress, Magento, ExactTarget",
+			"icon": "/static/images/icons/achievements/jobs/ebsco.png",
+			"points": 70,
+			"date": "10/18/13",
+			"special": false,
+			"unearned": false,
+			"reward": "Title: Web Developer II"
+		},
+		{
+			"title": "Zeekee Interactive",
+			"description": "First Web Dev position. Using: Tyfoon, Php, CSS, HTML",
+			"icon": "/static/images/icons/achievements/jobs/zeekee.png",
+			"points": 80,
+			"date": "09/10/11",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Truwood Cabinets",
+			"description": "CNC Router operator turned General Office worker (the computer guy).",
+			"icon": "/static/images/icons/achievements/jobs/truwood.png",
+			"points": 50,
+			"date": "09/10/08",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Wellborn Cabinet",
+			"description": "Lead the main cabinet assembly line.",
+			"icon": "/static/images/icons/achievements/jobs/wellborn.png",
+			"points": 50,
+			"date": "04/19/06",
+			"special": false,
+			"unearned": false,
+			"reward": "Title: Lead Person"
+		},
+		{
+			"title": "Lineville Health and Rehab",
+			"description": "Certified Nursing Assistant, helping the elderly.",
+			"icon": "/static/images/icons/achievements/jobs/nursing.png",
+			"points": 100,
+			"date": "08/13/05",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Showplace Rental",
+			"description": "Repossesions and Deliveries",
+			"icon": "/static/images/icons/achievements/jobs/showplace.png",
+			"points": 10,
+			"date": "07/20/03",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Blizzard Entertainment",
+			"description": "Building awesome sites for awesome games",
+			"icon": "/static/images/icons/achievements/jobs/blizzard.png",
+			"points": 500,
+			"special": false,
+			"unearned": true
+		}
+	],
+	"education" : [
+		{
+			"title": "Front-End Certification",
+			"description": "Certified to use Magento",
+			"icon": "/static/images/icons/achievements/education/certification.png",
+			"points": 20,
+			"date": "03/11/14",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "DeVry University",
+			"description": "Bachelor of Science in Computer Information Systems",
+			"icon": "/static/images/icons/achievements/education/devry.png",
+			"points": 80,
+			"date": "07/18/10",
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Southern Union State Community College",
+			"description": "Associates of Science",
+			"icon": "/static/images/icons/achievements/education/suscc.png",
+			"points": 20,
+			"date": "08/10/06",
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Bibb Graves High",
+			"description": "Graduated from high school",
+			"icon": "/static/images/icons/achievements/education/bulldogs.png",
+			"points": 50,
+			"date": "08/27/02",
+			"special": false,
+			"unearned": false
+		}
+	],
+	"reputation" : [
+		{
+			"title": "Jason Chen",
+			"description": "Current Co-Worker at NCSoft",
+			"icon": "/static/images/icons/achievements/references/jason.png",
+			"points": 200,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Nick Hamer",
+			"description": "Previous Co-Worker at NCSoft",
+			"icon": "/static/images/icons/achievements/references/nick.png",
+			"points": 200,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Andrew Niculescu",
+			"description": "Previous Manager at NCSoft",
+			"icon": "/static/images/icons/achievements/references/andrew.png",
+			"points": 200,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Doug Chomicz",
+			"description": "Previous Co-Worker at Zeekee and Ebsco",
+			"icon": "/static/images/icons/achievements/references/doug.png",
+			"points": 200,
+			"special": false,
+			"unearned": false
+		}
+	],
+	"pets" : [
+		{
+			"title": "Arthas",
+			"description": "White ragdoll.  Has the personality of his namesake.",
+			"icon": "/static/images/icons/achievements/pets/arthas.png",
+			"points": 100,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Koko",
+			"description": "Siamese mix. The middle child.",
+			"icon": "/static/images/icons/achievements/pets/koko.png",
+			"points": 100,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Pepper",
+			"description": "Russian Blue mix. The oldest.",
+			"icon": "/static/images/icons/achievements/pets/pepper.png",
+			"points": 100,
+			"special": true,
+			"unearned": false
+		}
+	],
+	"exploration" : [
+		{
+			"title": "Turning Japanese",
+			"description": "I love Japan.  I visit whenever I can.",
+			"icon": "/static/images/icons/achievements/exploration/japan.png",
+			"points": 100,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Californication",
+			"description": "My lovely new home. Such a nice 'Work/Life balance'",
+			"icon": "/static/images/icons/achievements/exploration/california.png",
+			"points": 80,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Philippines",
+			"description": "Visited several times.  Home of my wife.",
+			"icon": "/static/images/icons/achievements/exploration/philippines.png",
+			"points": 75,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Alabama Man",
+			"description": "Where I lived the majority of my life.",
+			"icon": "/static/images/icons/achievements/exploration/alabama.png",
+			"points": 50,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Georgia Peach",
+			"description": "The place of my birth.",
+			"icon": "/static/images/icons/achievements/exploration/georgia.png",
+			"points": 50,
+			"special": true,
+			"unearned": false
+		}
+	],
+	"hobbies" : [
+		{
+			"title": "Video Games",
+			"description": "My favorite pastime.",
+			"icon": "/static/images/icons/achievements/hobbies/videogames.png",
+			"points": 50,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Drumming",
+			"description": "Self taught drummer. Mostly 90's/2000's rock songs.",
+			"icon": "/static/images/icons/achievements/hobbies/drums.png",
+			"points": 30,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Sculpting",
+			"description": "A new found hobby. Still working on my first sculpture.",
+			"icon": "/static/images/icons/achievements/hobbies/sculpting.png",
+			"points": 30,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Drawing",
+			"description": "I have always tried to draw.  I am still mediocre.",
+			"icon": "/static/images/icons/achievements/hobbies/drawing.png",
+			"points": 20,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Eating",
+			"description": "I am a pro eater.  Not literally..",
+			"icon": "/static/images/icons/achievements/hobbies/eating.png",
+			"points": 10,
+			"special": false,
+			"unearned": false
+		},
+		{
+			"title": "Sleeping",
+			"description": "I might do this a bit too often.",
+			"icon": "/static/images/icons/achievements/hobbies/sleeping.png",
+			"points": 10,
+			"special": false,
+			"unearned": false
+		}
+	]
+}

@@ -9,7 +9,7 @@ const ActionBar = (props) => (
 					{
 						Object.keys(skills.primary).map((i, key) => {
 							let item = skills.primary[i];
-							return <Icon type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
+							return <Icon key={key} type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
 						})
 					}
 				</div>
@@ -17,7 +17,7 @@ const ActionBar = (props) => (
 					{
 						Object.keys(skills.secondary).map((i, key) => {
 							let item = skills.secondary[i];
-							return <Icon type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
+							return <Icon key={key} type="skill" image={item.image} keybind={item.keybind} uses={item.uses} />
 						})
 					}
 				</div>

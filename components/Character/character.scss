@@ -54,13 +54,13 @@
 	&#character-summary {
 		&.talk {
 			position: absolute;
-			width: 490px;
-			height: 745px;
-			right: 0;
+			width: 368px;
+			height: 558px;
+			right: -150px;
 			top: 50%;
 			transform: translateY(-50%);
 			background-image: url('/static/images/character/summary.png');
-			animation: emote 2s steps(39) infinite;
+			animation: emote 2.3s steps(39) infinite;
 		}
 	}
 }

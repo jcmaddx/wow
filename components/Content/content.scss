@@ -1,15 +1,42 @@
 @import "../../pages/global.scss";
-#content {
+@import "../../static/fonts/fonts.scss";
+.content {
 	display: inline-block;
 	vertical-align: top;
   width: calc(100% - 196px);
   margin-left: 2px;
-	height: calc(100% - 20px);
-	padding: 10px 0;
+	height: 100%;
 	background: url(/static/images/panel/bg_repeat.jpg) repeat top center;
 	border-radius: 3px;
 	box-shadow: inset 0px 0px 50px 10px rgba(black, 0.8);
 	border: 1px solid $parchment;
-	overflow: hidden;
+	overflow: auto;
 	position: relative;
+	&.dark {
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.6);
+		}
+	}
+	&.text {
+		overflow: visible;
+		padding: 20px;
+		width: calc(100% - 236px);
+		height: calc(100% - 40px);
+		font-family: "friz";
+		h1 {
+			color: $whitish;
+			text-shadow: 2px 2px 0 $brown;
+			margin: 0 0 20px 0;
+		}
+		p {
+			padding-right: 160px;
+			color: $brown;
+			font-size: 14px;
+		}
+	}
 }

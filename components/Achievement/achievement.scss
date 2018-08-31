@@ -3,9 +3,10 @@
 .achievement {
 	height: 80px;
 	width: calc(100% - 4px);
-	max-width: 512px;
+	max-width: 608px;
 	margin: 2px;
 	background: url(/static/images/achievements/bg_ach.png) no-repeat top left;
+	background-size: 100% auto;
 	position: relative;
 	border-radius: 3px;
 	border: 1px solid $red;

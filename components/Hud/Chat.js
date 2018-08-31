@@ -8,7 +8,9 @@ export default class extends React.Component {
 				<div className="chat-pane">
 					<div className="tab">General</div>
 					<div ref="messages" className="messages">
-						<p className="error">Unrecognized command. Available commands listed in the summary section.</p>
+						<p className="error">Press "Y" to open Achievements Pane.</p>
+						<p className="error">Press "/" or "Enter" to access chat pane.</p>
+						<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
 						<p>[<span className="player">Maygus</span>] says: Heya</p>
 					</div>
 				</div>
