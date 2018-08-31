@@ -1,0 +1,50 @@
+@import "../../pages/global.scss";
+@import "../../static/fonts/fonts.scss";
+#header {
+	height: 95px;
+	width: calc(100% - 552px);
+  top: -110px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	background: url(/static/images/panel/img_head-center.png) repeat-x top center;
+	text-align: center;
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		height: 95px;
+		width: 296px;
+	}
+	&:before {
+		background: url(/static/images/panel/img_head-left.png) repeat-x top center;
+		left: -296px;
+	}
+	&:after {
+		background: url(/static/images/panel/img_head-right.png) repeat-x top center;
+		right: -296px;
+	}
+	h3 {
+		margin: 0;
+		color: $gold;
+		font-family: "friz";
+		font-size: 12px;
+		margin-top: 45px;
+		font-weight: 100;
+	}
+	.points {
+		display: inline-block;
+		background: url(/static/images/panel/bg_points.png) no-repeat center center;
+		width: 90px;
+		height: 35px;
+		line-height: 35px;
+		position: relative;
+		top: -5px;
+		color: $whitish;
+		font-family: "friz";
+		letter-spacing: 1px;
+		font-size: 10px;
+		text-align: right;
+		padding-right: 40px;
+	}
+}

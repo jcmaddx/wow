@@ -1,0 +1,19 @@
+@import "../../pages/global.scss";
+#pane {
+	width: 770px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border-width: 40px;
+  border-style: solid;
+	border-image: url(/static/images/panel/border-image.png) 40 40 40 40 fill repeat;
+	.inner {
+		background: $brown;
+		padding: 2px;
+		width: calc(100% + 40px);
+		height: calc(100% + 38px);
+		margin: -21px 0px 0px -22px;
+	}
+}

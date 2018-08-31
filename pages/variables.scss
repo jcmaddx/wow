@@ -1,11 +1,15 @@
 $gold: #facb03;
 $brown: #0f0d1b;
+$red: #7c1b14;
+$blue: #2c798d;
 $whitish: #fffffa;
 $frame: #8d8d8d;
 $orange: #90583f;
 $warlock: #9382ff;
 $yellow: #ebff06;
 $tan: #baa47d;
+$parchment: #bc792a;
+$grey: #504b45;
 
 @function decimal-round ($number, $digits: 0, $mode: round) {
     $n: 1;

@@ -1,8 +1,9 @@
 import achievements from '../../data/achievements'
+import TextContent from './TextContent'
+import './content.scss'
 const Content = (props) => {
 	return (
 		<div id="content">
-			{props.page}
 			{
 				/*
 				<ul>

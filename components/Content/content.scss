@@ -1,0 +1,15 @@
+@import "../../pages/global.scss";
+#content {
+	display: inline-block;
+	vertical-align: top;
+  width: calc(100% - 196px);
+  margin-left: 2px;
+	height: calc(100% - 20px);
+	padding: 10px 0;
+	background: url(/static/images/panel/bg_repeat.jpg) repeat top center;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 50px 10px rgba(black, 0.8);
+	border: 1px solid $parchment;
+	overflow: hidden;
+	position: relative;
+}

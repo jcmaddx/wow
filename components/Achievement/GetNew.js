@@ -1,6 +1,10 @@
 import './getNew.scss'
 const GetNew = (props) => (
-	<div className="achievement-get">You got a thing!</div>
+	<div className="achievement-get">
+		<div className="shine" />
+		<h2>Achievement Earned</h2>
+		<h3>View an Awesome Resume</h3>
+	</div>
 )
 
 export default GetNew

@@ -1,5 +1,5 @@
 import SideNavLink from './SideNavLink'
-
+import "./sidenav.scss"
 const SideNav = (props) => (
   <div id="side-nav">
   	<ul>

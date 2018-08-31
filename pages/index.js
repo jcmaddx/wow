@@ -11,7 +11,7 @@ import "./global.scss"
 
 const Index = withRouter((props) => (
 	<div id="app">
-		<Character location="main" action="cheer" />
+		<Character location="main" action="stand" />
 		<Hud character={props.character}/>
 		<AchievementPane>
 			<Content page={(props.router.query.page) ? props.router.query.page : 'summary'} />

@@ -1,0 +1,134 @@
+@import "../../pages/global.scss";
+@import "../../static/fonts/fonts.scss";
+.achievement {
+	height: 80px;
+	width: calc(100% - 4px);
+	max-width: 512px;
+	margin: 2px;
+	background: url(/static/images/achievements/bg_ach.png) no-repeat top left;
+	position: relative;
+	border-radius: 3px;
+	border: 1px solid $red;
+	overflow: hidden;
+	.icon {
+		position: absolute;
+		z-index: 10;
+	}
+	h4 {
+		margin: 0;
+		display: block;
+		text-align: center;
+		font-family: "friz";
+		font-weight: 100;
+		text-shadow: 1px 1px 0 $brown;
+		color: $whitish;
+		font-size: 12px;
+		background: url(/static/images/achievements/bg_ach-title.png) no-repeat top center;
+		height: 20px;
+		line-height: 20px;
+		&:after {
+			display: block;
+			width: 380px;
+			height: 60px;
+			content: "";
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			background: url(/static/images/achievements/bg_glow.png) no-repeat top center;
+		}
+	}
+	.description {
+		height: 50px;
+		padding-top: 10px;
+		width: 100%;
+		position: relative;
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 18px;
+			opacity: 0.7;
+		}
+		&:before {
+			top: 0;
+			background: url(/static/images/achievements/bg_waves-top.png) repeat-x top center;
+		}
+		&:after {
+			bottom: 0;
+			background: url(/static/images/achievements/bg_waves-bottom.png) repeat-x top center;
+		}
+		p {
+			margin: 0;
+			text-align: center;
+			font-family: "friz";
+			color: $brown;
+			font-size: 11px;
+		}
+	}
+	.points {
+		position: absolute;
+		right: 3px;
+		top: 0;
+		height: 100%;
+		width: 60px;
+		.shield {
+			width: 60px;
+			height: 50px;
+			line-height: 50px;
+			background: url(/static/images/achievements/icon_shield.png) no-repeat center center;
+			background-size: 100% auto;
+			color: $whitish;
+			font-family: "friz";
+			text-align: center;
+			font-size: 11px;
+			font-weight: 100;
+			margin-top: 5px;
+		}
+		.date {
+			font-family: "friz";
+			color: $gold;
+			margin: 0;
+			font-size: 9px;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+	}
+	.reward {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: url(/static/images/achievements/bg_rewardbar.png) no-repeat center center;
+		text-align: center;
+		height: 18px;
+		p {
+			margin: 0;
+			font-family: "friz";
+			color: $gold;
+			font-size: 9px;
+			line-height: 18px;
+			font-weight: 100;
+		}
+	}
+	&.special {
+		border-color: $blue;
+		h4 {
+			background-image: url(/static/images/achievements/bg_ach-title-special.png)
+		}
+	}
+	&.unearned {
+		background-image: url(/static/images/achievements/bg_nocomp.png);
+		border-color: $grey;
+		h4 {
+			opacity: 0.5;
+		}
+		.icon, .description, .reward, .points {
+			opacity: 0.8;
+		}
+		.points {
+			-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    	filter: grayscale(100%);
+		}
+	}
+}

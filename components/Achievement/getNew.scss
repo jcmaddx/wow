@@ -1,3 +1,53 @@
+@import "../../pages/global.scss";
+@import "../../static/fonts/fonts.scss";
 .achievement-get {
-	
+	width: 175px;
+	height: 65px;
+	background: url(/static/images/achievements/get/bg_new_ach.png) no-repeat left top;
+	padding: 20px 70px 0 70px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 150px;
+	//animation: temp 3s linear forwards;
+	h2 {
+		color: $brown;
+		font-size: 10px;
+		font-family: "friz";
+		margin: 0;
+	}
+	h3 {
+		margin: 3px 0 0;
+		color: $whitish;
+		font-family: "friz";
+		font-size: 11px;
+		font-weight: 100;
+		text-shadow: 0 0 5px black;
+	}
+	.shine {
+		width: 297px;
+    height: 58px;
+    background-image: url(/static/images/achievements/get/shine.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    border-radius: 10px;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    animation: shine .8s linear forwards;
+	}
+}
+
+@keyframes shine {
+	0% { opacity: 0; background-position: -50% top}
+	1% { opacity: 1; background-position: -50% top}
+	99% { opacity: 1; background-position: 150% top}
+	100% { opacity: 0; background-position: 150% top}
+}
+
+@keyframes temp {
+	0%, 95% { opacity: 1; display: block }
+	99% { opacity: 0; display: block }
+	100% { opacity: 0; display: none }
 }
