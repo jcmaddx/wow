@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  	"start": "node server.js -p $PORT",
+    "start": "node server.js -p $PORT",
     "heroku-postbuild": "next build",
     "build": "next build",
     "dev": "node server.js",
@@ -23,6 +23,7 @@
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-ga": "^2.5.3",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
