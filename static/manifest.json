@@ -97,6 +97,7 @@
 		{"id":"cheer1", "src": "/static/sounds/cheer1.mp3"},
 		{"id":"cheer2", "src": "/static/sounds/cheer2.mp3"},
 		{"id":"closemenu", "src": "/static/sounds/closemenu.mp3"},
+		{"id":"cry", "src": "/static/sounds/cry.mp3"},
 		{"id":"laugh", "src": "/static/sounds/laugh.mp3"},
 		{"id":"notarget1", "src": "/static/sounds/notarget1.mp3"},
 		{"id":"notarget2", "src": "/static/sounds/notarget2.mp3"},

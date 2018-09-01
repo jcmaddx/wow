@@ -12,6 +12,9 @@ import GetNew from '../components/Achievement/GetNew'
 
 import "./global.scss"
 
+let bubbleTime;
+let animTimer;
+
 class Index extends Component {
 	static async getInitialProps () {
 		const res = await fetch('https://us.api.battle.net/wow/character/Nesingwary/Maygus?fields=stats&locale=en_US&apikey=nhpy2sjgwgy2gk3q557ka9r6vvjkq288')
@@ -40,9 +43,11 @@ class Index extends Component {
 	}
 
 	handleKeys = (e) => {
+		let code = e.keyCode;
+		let box = document.getElementById('chatbox');
 		if(!this.props.locked){
-			switch(e.keyCode) {
-				case 89:
+			switch(true) {
+				case (code === 89): // Y Key for achievement pane
 					if(this.props.hide){
 						this.props.dispatch({type: "ACHIEVEMENTS", value: false})
 						this.playSound('openmenu')
@@ -51,7 +56,77 @@ class Index extends Component {
 						this.playSound('closemenu')
 					}
 					break;
+				case ((code > 47 && code < 58) || code === 187 || code === 189 || code === 74 || code === 86): // Number keys
+					this.playRandom();
+					break;
+				case (code === 191 || code === 13): // Slash and enter for chat
+					
+					if(code === 191){
+						box.value = '/'; //set slash for emotes in box
+					}
+					box.focus();
+					break;
 			}
+		} else {
+			if(code === 27) { //escape pressed while focused
+				box.blur();
+			} else if(code === 13) { // pressed enter in the box
+				let text = box.value;
+				if(text !== "") {
+					this.handleChat(text);
+					box.value = '';
+				}
+				box.blur();
+			}
+		}
+	}
+
+	handleChat = (text) => {
+		let message, messages = document.getElementById('messages');
+		if(text.charAt(0) === '/'){ // trying a command
+			let timer, isValid = true;
+			if(text === '/cheer') {
+				this.props.dispatch({type: 'ANIMATE', value: 'cheer'});
+				let cheer = 'cheer'+ (Math.floor(Math.random() * 2) + 1);
+				this.playSound(cheer);
+				message = "You cheer!";
+				timer = 2500;
+			} else if(text === '/laugh') {
+				this.props.dispatch({type: 'ANIMATE', value: 'laugh'});
+				this.playSound('laugh');
+				message = "You laugh.";
+				timer = 3300;
+			} else if(text === '/cry') {
+				this.props.dispatch({type: 'ANIMATE', value: 'cry'});
+				this.playSound('cry');
+				message = "You cry.";
+				timer = 4250;
+			} else if(text === '/beg') {
+				this.props.dispatch({type: 'ANIMATE', value: 'beg'});
+				message = "You beg everyone around you. How pathetic.";
+				timer = 4700;
+			} else { // invalid command
+				isValid = false;
+				messages.insertAdjacentHTML('beforeend', '<p class="error">That is not a valid command.</p>');
+			}
+			if(isValid) { // go back to stand after animation
+				clearTimeout(animTimer);
+				messages.insertAdjacentHTML('beforeend', '<p class="emote">'+message+'</p>');
+				animTimer = setTimeout(() => {
+					this.props.dispatch({type: 'ANIMATE', value: 'stand'});
+				}, timer)
+			}
+		} else { // just some text
+			let bubble = document.getElementById('chat-bubble');
+			messages.insertAdjacentHTML('beforeend', '<p>[<span class="player">Maygus</span>] says: '+text+'</p>');
+			this.props.dispatch({type: 'TALK', value: text});
+			this.props.dispatch({type: 'ANIMATE', value: 'talk'});
+			bubble.classList.remove('hidden')
+			clearTimeout(bubbleTime);
+			bubbleTime = setTimeout(() => {
+				bubble.classList.add('hidden')
+				this.props.dispatch({type: 'ANIMATE', value: 'stand'});
+			}, 4000)
 		}
 	}
 
@@ -73,7 +148,7 @@ class Index extends Component {
 			this.props.dispatch({type: "ANIMATE", value: "stand"})
 			this.playSound('openmenu');
 			this.props.dispatch({type: "ACHIEVEMENTS", value: false})
-		},4500)
+		},5000)
 	}
 
 	render() {

@@ -12,7 +12,7 @@
 		transform-origin: bottom center;
 		opacity: 0;
 		&.cheer {
-			left: calc(50% + 5px);
+			left: calc(50% + 4px);
 			height: 830px;
 			width: 465px;
 			background-image: url('/static/images/character/cheer.png');
@@ -23,25 +23,25 @@
 			background-image: url('/static/images/character/stand.png');
 		}
 		&.cry {
-			left: calc(50% + 3px);
+			left: calc(50% + 2px);
 			height: 525px;
 			width: 310px;
 			background-image: url('/static/images/character/cry.png');
 		}
 		&.laugh {
-			left: calc(50% - 1px);
+			left: 50%;
 			height: 535px;
 			width: 280px;
 			background-image: url('/static/images/character/laugh.png');
 		}
 		&.beg {
-			left: calc(50% + 4px);
+			left: calc(50% + 2px);
 			height: 529px;
 			width: 311px;
 			background-image: url('/static/images/character/beg.png');
 		}
 		&.talk {
-			left: calc(50% + 24px);
+			left: calc(50% + 17px);
 			height: 535px;
 			width: 345px;
 			background-image: url('/static/images/character/talk.png');
