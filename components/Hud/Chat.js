@@ -12,9 +12,11 @@ class Chat extends React.Component {
 			<div id="chat">
 				<div className="chat-pane">
 					<div className="tab">General</div>
-					<div ref="messages" id="messages" className="messages">
-						<p className="error">Press "Y" to open Achievements Pane.</p>
-						<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
+					<div id="contain" className="message-contain">
+						<div ref="messages" id="messages" className="messages">
+							<p className="error">Press "Y" to open Achievements Pane.</p>
+							<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
+						</div>
 					</div>
 				</div>
 				<div className="chat-input">

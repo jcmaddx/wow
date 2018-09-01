@@ -82,7 +82,7 @@ class Index extends Component {
 	}
 
 	handleChat = (text) => {
-		let message, messages = document.getElementById('messages');
+		let message, messages = document.getElementById('messages'), container = document.getElementById('contain');
 		if(text.charAt(0) === '/'){ // trying a command
 			let timer, isValid = true;
 			if(text === '/cheer') {
@@ -108,10 +108,12 @@ class Index extends Component {
 			} else { // invalid command
 				isValid = false;
 				messages.insertAdjacentHTML('beforeend', '<p class="error">That is not a valid command.</p>');
+				container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
 			}
 			if(isValid) { // go back to stand after animation
 				clearTimeout(animTimer);
 				messages.insertAdjacentHTML('beforeend', '<p class="emote">'+message+'</p>');
+				container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
 				animTimer = setTimeout(() => {
 					this.props.dispatch({type: 'ANIMATE', value: 'stand'});
 				}, timer)
@@ -119,6 +121,7 @@ class Index extends Component {
 		} else { // just some text
 			let bubble = document.getElementById('chat-bubble');
 			messages.insertAdjacentHTML('beforeend', '<p>[<span class="player">Maygus</span>] says: '+text+'</p>');
+			container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
 			this.props.dispatch({type: 'TALK', value: text});
 			this.props.dispatch({type: 'ANIMATE', value: 'talk'});
 			bubble.classList.remove('hidden')
