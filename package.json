@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+  	"start": "node server.js",
+    "heroku-postbuild": "next build",
     "build": "next build",
     "dev": "node server.js",
     "storybook": "start-storybook -p 9001 -s ./ -c .storybook"
