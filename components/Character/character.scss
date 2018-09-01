@@ -49,21 +49,33 @@
 		&.show {
 			opacity: 1;
 			&.cheer {
+				-webkit-animation: emote 2.5s steps(49) infinite;
+				-moz-animation: emote 2.5s steps(49) infinite;
 				animation: emote 2.5s steps(49) infinite;
 			}
 			&.stand {
+				-webkit-animation: emote 2.65s steps(52) infinite;
+				-moz-animation: emote 2.65s steps(52) infinite;
 				animation: emote 2.65s steps(52) infinite;
 			}
 			&.cry {
+				-webkit-animation: emote 4.25s steps(85) infinite;
+				-moz-animation: emote 4.25s steps(85) infinite;
 				animation: emote 4.25s steps(85) infinite;
 			}
 			&.laugh {
+				-webkit-animation: emote 3.3s steps(65) infinite;
+				-moz-animation: emote 3.3s steps(65) infinite;
 				animation: emote 3.3s steps(65) infinite;
 			}
 			&.beg {
+				-webkit-animation: emote 4.7s steps(93) infinite;
+				-moz-animation: emote 4.7s steps(93) infinite;
 				animation: emote 4.7s steps(93) infinite;
 			}
 			&.talk {
+				-webkit-animation: emote 2s steps(39) infinite;
+				-moz-animation: emote 2s steps(39) infinite;
 				animation: emote 2s steps(39) infinite;
 			}
 		}
@@ -77,11 +89,18 @@
 			top: 50%;
 			transform: translateY(-50%);
 			background-image: url('/static/images/character/summary.png');
+			-webkit-animation: emote 2.3s steps(39) infinite;
+			-moz-animation: emote 2.3s steps(39) infinite;
 			animation: emote 2.3s steps(39) infinite;
 		}
 	}
 }
-
+@-webkit-keyframes emote {
+  100% { background-position: right top;}
+}
+@-moz-keyframes emote {
+	100% { background-position: right top;}
+}
 @keyframes emote {
 	100% { background-position: right top;}
 }
