@@ -3,8 +3,7 @@
 body {
 	height: 100vh;
 	width: 100vw;
-	background: url(/static/images/main_bg.jpg) no-repeat bottom center;
-	background-size: cover;
+	background: $brown;
 }
 ul {
 	margin: 0;
@@ -13,4 +12,14 @@ ul {
 }
 * {
 	cursor: url(/static/images/cursor.png), auto;
+}
+.main-content {
+	opacity: 1;
+	width: 100vw;
+	height: 100vh;
+	background: url(/static/images/main_bg.jpg) no-repeat bottom center;
+	background-size: cover;
+	&.hidden {
+		opacity: 0;
+	}
 }

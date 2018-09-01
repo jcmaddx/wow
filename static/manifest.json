@@ -1,5 +1,8 @@
 {
 	"manifest": [
+		"/static/images/loading/loading.png",
+		"/static/images/loading/loading-bar.png",
+		"/static/images/loading/loading-fill.png",
 		"/static/images/achievements/bg_ach-title-special.png",
 		"/static/images/achievements/bg_ach-title.png",
 		"/static/images/achievements/bg_glow.png",

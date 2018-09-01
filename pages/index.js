@@ -27,6 +27,7 @@ class Index extends Component {
 	componentDidMount() {
 		window.addEventListener("keyup", this.handleKeys);
 		let complete = () => {
+			document.getElementById('main-content').classList.remove('hidden')
 			this.props.dispatch({type: 'INTRO', value: false});
 			this.intro();
 		};
@@ -159,7 +160,7 @@ class Index extends Component {
 		return (
 			<div id="app">
 					{ (props.loading) ? <Loading /> : null }
-					<div>
+					<div id="main-content" className="main-content hidden">
 						<Character location="main" current={props.action} action="stand" />
 						<Character location="main" current={props.action} action="cheer" />
 						<Character location="main" current={props.action} action="talk" />
