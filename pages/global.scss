@@ -19,6 +19,7 @@ ul {
 	height: 100vh;
 	background: url(/static/images/main_bg.jpg) no-repeat bottom center;
 	background-size: cover;
+	overflow: hidden;
 	&.hidden {
 		opacity: 0;
 	}
