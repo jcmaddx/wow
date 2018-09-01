@@ -1,7 +1,8 @@
 import React from 'react';
+import {connect} from "react-redux";
 import './chat.scss'
 
-export default class extends React.Component {
+class Chat extends React.Component {
 	render() {
 		return (
 			<div id="chat">
@@ -9,9 +10,8 @@ export default class extends React.Component {
 					<div className="tab">General</div>
 					<div ref="messages" className="messages">
 						<p className="error">Press "Y" to open Achievements Pane.</p>
-						<p className="error">Press "/" or "Enter" to access chat pane.</p>
 						<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
-						<p>[<span className="player">Maygus</span>] says: Heya</p>
+						<p onClick={() => {this.props.dispatch({type: "ANIMATE", value: "cheer"})}}>[<span className="player">Maygus</span>] says: Heya</p>
 					</div>
 				</div>
 				<div className="chat-input">
@@ -22,3 +22,5 @@ export default class extends React.Component {
 		)
 	}
 }
+
+export default connect(state=>state)(Chat)

@@ -10,7 +10,8 @@
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 150px;
-	//animation: temp 3s linear forwards;
+	animation: temp 3s linear forwards;
+	display: none;
 	h2 {
 		color: $brown;
 		font-size: 10px;
@@ -35,7 +36,13 @@
     position: absolute;
     left: 10px;
     top: 12px;
-    animation: shine .8s linear forwards;
+    
+	}
+	&:not(.hidden) {
+		display: block;
+		.shine {
+			animation: shine .8s linear forwards;
+		}
 	}
 }
 

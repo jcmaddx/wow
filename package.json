@@ -17,9 +17,14 @@
     "express": "^4.16.3",
     "isomorphic-unfetch": "^2.1.1",
     "next": "^6.1.1",
+    "next-redux-wrapper": "^2.0.0",
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.4.10",

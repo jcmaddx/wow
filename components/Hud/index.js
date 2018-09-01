@@ -8,9 +8,9 @@ const Hud = (props) => (
 	<div id="hud">
 		<Player health={props.character.stats.health} mana={props.character.stats.power} name={props.character.name} level={props.character.level} />
 		<MiniMap />
-		<ChatBubble text="Somet text in a bubble"/>
+		<ChatBubble hidden={true}/>
 		<Chat />
-		<ActionBar />
+		<ActionBar playRandom={props.playRandom}/>
 	</div>
 )
 

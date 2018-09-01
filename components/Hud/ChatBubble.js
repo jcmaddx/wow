@@ -1,13 +1,13 @@
 import React from 'react';
+import {connect} from "react-redux";
 import './chat.scss'
+import classnames from 'classnames'
 
-export default class extends React.Component {
-	constructor(props){
-		super(props);
-	}
-	render() {
-		return (
-			<div id="chat-bubble">{this.props.text}</div>
-		)
-	}
+const ChatBubble = (props) => {
+	let bubbleClass = classnames({
+		'hidden': props.hidden
+	})
+	return <div id="chat-bubble" className={bubbleClass}>{props.text}</div>
 }
+
+export default connect(state=>state)(ChatBubble)

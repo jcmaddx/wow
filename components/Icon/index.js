@@ -7,7 +7,7 @@ const Icon = (props) => {
 		[props.type]: !!props.type
 	})
 	return (
-		<div className={iconclass}>
+		<div onClick={(props.cb) ? props.cb : () => { return false }} className={iconclass}>
 			{
 				(props.keybind) ? 
 				<p className="keybind">{props.keybind}</p>

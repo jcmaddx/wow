@@ -1,6 +1,15 @@
 import "./character.scss"
-const Character = (props) => (
-	<div id={"character-"+props.location} className={"character " + props.action}></div>
-)
+import classnames from 'classnames'
+const Character = (props) => {
+	let characterclass = classnames({
+		"character": true,
+		[props.action]: true,
+		"show": (props.action === props.current)
+	})
+	return (
+		<div id={"character-"+props.location} className={characterclass}></div>
+	)
+}
+
 
 export default Character

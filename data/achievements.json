@@ -6,8 +6,8 @@
 			"This site was built using React.js through the Next.js framework.  It was styled using SCSS and Storybook.js.",
 			"There are several ways you can interact with the site.  The most simple interaction is that you can browse my 'Achievements' here in this panel.",
 			"You can also press the 'Y' key to close and reopen this panel to gain access to the screen behind the panel.",
-			"You may click or press the keybinds to try and use skills on the action bar, and can press '/' or the enter key to gain access to the chat box.",
-			"Once in the chat box, you can try out some of the emotes from WoW such as '/laugh' and '/cry', or just have the character say a phrase.",
+			"You may click or press the keybinds to try and use skills on the action bar.",
+			"You can also use the chat box to try out some of the emotes from WoW such as '/laugh' and '/cry', or just have the character say a phrase.",
 			"Thanks for visiting, I hope you enjoy your experience!"
 		]
 	},
@@ -24,7 +24,7 @@
 		{
 			"title": "Cascading with Style",
 			"description": "You can make web pages look nice with CSS and SCSS",
-			"icon": "/static/images/icons/achievements/skills/css2.png",
+			"icon": "/static/images/icons/achievements/skills/css.png",
 			"points": 30,
 			"date": "3/13/14",
 			"special": false,
