@@ -107,6 +107,12 @@
 			opacity: 1;
 			z-index: 8;
 		}
+
+		//IE can't handle focus-within
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			opacity: 1;
+			z-index: 8;
+		}
 	}
 }
 #chat-bubble {
