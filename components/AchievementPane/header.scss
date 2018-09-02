@@ -71,7 +71,7 @@
 	}
 }
 
-@media screen and (max-height: 650px) and (orientation: landscape) {
+@media screen and (max-width: 650px) and (orientation: landscape) {
 	#header {
 		&:before {
 			width: calc(50vh - 30px);
