@@ -1,6 +1,6 @@
 @import './normalize.scss';
 @import './variables.scss';
-body, html {
+body {
 	height: 100vh;
 	width: 100vw;
 	background: $brown;
@@ -28,7 +28,7 @@ ul {
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-  body, html {
+	body {
     transform: rotate(-90deg);
     transform-origin: left top;
     width: 100vh;
