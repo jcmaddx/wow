@@ -42,9 +42,6 @@ class Index extends Component {
 		});
 		queue.on("complete", complete, this);
 		queue.loadManifest("/static/manifest.json");
-
-		const height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-		document.body.style['min-height'] = height + 'px';
 	}
 
 	handleKeys = (e) => {
