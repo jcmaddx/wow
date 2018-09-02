@@ -113,6 +113,11 @@
 			opacity: 1;
 			z-index: 8;
 		}
+		// Edget also can't handle focus-within
+		@supports (-ms-accelerator:true) {
+			opacity: 1;
+			z-index: 8;
+		}
 	}
 }
 #chat-bubble {
