@@ -3,7 +3,7 @@ import Clock from './Clock';
 import "./minimap.scss" 
 const MiniMap = (props) => (
 	<div id="minimap">
-		<h3>Tradewinds Market</h3>
+		<h3>Proudmoore Keep</h3>
 		<div className="date">{now.getDate()}</div>
 		<div className="time"><Clock /></div>
 	</div>
