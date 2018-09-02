@@ -103,7 +103,7 @@
 			font-family: "Arial", sans-serif;
 			font-weight: 100;
 		}
-		&:focus-within {
+		&:focus-within, &:focus {
 			opacity: 1;
 			z-index: 8;
 		}
