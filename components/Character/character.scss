@@ -4,46 +4,35 @@
 	background-repeat: no-repeat;
 	background-position: top left;
 	backface-visibility: hidden;
-	&#character-main {
+	&.main {
 		position: absolute;
 		left: 50%;
-		bottom: 70px;
-		transform: translateX(-50%) scale(0.7);
+		bottom: 50px;
+		height: 470px;
+		width: 300px;
+		transform: translateX(-50%);
 		transform-origin: bottom center;
 		opacity: 0;
 		&.cheer {
-			left: calc(50% + 4px);
-			height: 830px;
-			width: 465px;
+			left: calc(50% + 20px);
+			height: 715px;
+			width: 360px;
 			background-image: url('/static/images/character/cheer.png');
 		}
 		&.stand {
-			height: 535px;
-			width: 279px;
 			background-image: url('/static/images/character/stand.png');
 		}
 		&.cry {
-			left: calc(50% + 2px);
-			height: 525px;
-			width: 310px;
 			background-image: url('/static/images/character/cry.png');
 		}
 		&.laugh {
-			left: 50%;
-			height: 535px;
-			width: 280px;
 			background-image: url('/static/images/character/laugh.png');
 		}
 		&.beg {
-			left: calc(50% + 2px);
-			height: 529px;
-			width: 311px;
 			background-image: url('/static/images/character/beg.png');
 		}
 		&.talk {
 			left: calc(50% + 17px);
-			height: 535px;
-			width: 345px;
 			background-image: url('/static/images/character/talk.png');
 		}
 		&.show {
@@ -80,12 +69,12 @@
 			}
 		}
 	}
-	&#character-summary {
+	&.summary {
 		&.talk {
 			position: absolute;
-			width: 368px;
-			height: 558px;
-			right: -150px;
+			width: 320px;
+			height: 515px;
+			right: -100px;
 			top: 50%;
 			transform: translateY(-50%);
 			background-image: url('/static/images/character/summary.png');
@@ -103,4 +92,18 @@
 }
 @keyframes emote {
 	100% { background-position: right top;}
+}
+
+@media (max-width: 1023px) {
+	.character.main {
+		bottom: 0;
+	}
+}
+
+@media (max-height: 660px), (max-width: 930px) {
+	.character {
+		&.summary {
+			display: none;
+		}
+	}
 }

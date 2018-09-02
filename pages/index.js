@@ -36,7 +36,7 @@ class Index extends Component {
 		queue.installPlugin(createjs.Sound);
 		queue.on("progress", (e) => {
 			let bar = document.getElementById('progress');
-			let update = Math.round((e.progress * 100));
+			let update = Math.round((e.progress * 100) + 7);
 			bar.style.width = update + "%";
 		});
 		queue.on("complete", complete, this);
@@ -82,42 +82,53 @@ class Index extends Component {
 		}
 	}
 
+	handleEmote = (id, timer) => {
+		switch(id){
+			case 'cheer':
+				this.props.dispatch({type: 'ANIMATE', value: id});
+				let sound = 'cheer'+ (Math.floor(Math.random() * 2) + 1);
+				this.playSound(sound);
+				break;
+			case 'laugh':
+			case 'cry':
+			case 'beg':
+				this.props.dispatch({type: 'ANIMATE', value: id});
+				this.playSound(id);
+				break;
+			default:
+				return false
+				break;
+		}
+		clearTimeout(animTimer);
+		animTimer = setTimeout(() => {
+			this.props.dispatch({type: 'ANIMATE', value: 'stand'});
+		}, timer)
+	}
+
 	handleChat = (text) => {
 		let message, messages = document.getElementById('messages'), container = document.getElementById('contain');
 		if(text.charAt(0) === '/'){ // trying a command
-			let timer, isValid = true;
+			let timer, isValid = true, code = text.substring(1);
 			if(text === '/cheer') {
-				this.props.dispatch({type: 'ANIMATE', value: 'cheer'});
-				let cheer = 'cheer'+ (Math.floor(Math.random() * 2) + 1);
-				this.playSound(cheer);
+				this.handleEmote(code, 2500);
 				message = "You cheer!";
-				timer = 2500;
 			} else if(text === '/laugh') {
-				this.props.dispatch({type: 'ANIMATE', value: 'laugh'});
-				this.playSound('laugh');
+				this.handleEmote(code, 3300);
 				message = "You laugh.";
-				timer = 3300;
 			} else if(text === '/cry') {
-				this.props.dispatch({type: 'ANIMATE', value: 'cry'});
-				this.playSound('cry');
+				this.handleEmote(code, 4250);
 				message = "You cry.";
-				timer = 4250;
 			} else if(text === '/beg') {
-				this.props.dispatch({type: 'ANIMATE', value: 'beg'});
+				this.handleEmote(code, 4700);
 				message = "You beg everyone around you. How pathetic.";
-				timer = 4700;
 			} else { // invalid command
 				isValid = false;
 				messages.insertAdjacentHTML('beforeend', '<p class="error">That is not a valid command.</p>');
 				container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
 			}
 			if(isValid) { // go back to stand after animation
-				clearTimeout(animTimer);
 				messages.insertAdjacentHTML('beforeend', '<p class="emote">'+message+'</p>');
 				container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
-				animTimer = setTimeout(() => {
-					this.props.dispatch({type: 'ANIMATE', value: 'stand'});
-				}, timer)
 			}
 		} else { // just some text
 			let bubble = document.getElementById('chat-bubble');
@@ -167,8 +178,8 @@ class Index extends Component {
 						<Character location="main" current={props.action} action="laugh" />
 						<Character location="main" current={props.action} action="cry" />
 						<Character location="main" current={props.action} action="beg" />
-						<Hud playRandom={this.playRandom} character={props.character}/>
-						<AchievementPane hidden={props.hide} points={props.character.achievementPoints.toLocaleString()}>
+						<Hud handleEmote={this.handleEmote} playSound={this.playSound} playRandom={this.playRandom} character={props.character}/>
+						<AchievementPane playSound={this.playSound} hidden={props.hide} points={props.character.achievementPoints.toLocaleString()}>
 							<Content page={(props.router.query.page) ? props.router.query.page : 'summary'} />
 						</AchievementPane>
 						<GetNew hidden={props.get}/>

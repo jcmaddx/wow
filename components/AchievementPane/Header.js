@@ -1,8 +1,10 @@
 import "./header.scss"
 const Header = (props) => (
 	<div id="header">
-		<h3>Achievement Points</h3>
-		<div className="points">{props.points}</div>
+		<div className="header-content">
+			<h3>Achievement Points</h3>
+			<div className="points">{props.points}</div>
+		</div>
 	</div>
 )
 

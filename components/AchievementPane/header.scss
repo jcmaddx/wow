@@ -17,34 +17,67 @@
 		width: 296px;
 	}
 	&:before {
-		background: url(/static/images/panel/img_head-left.png) repeat-x top center;
+		background: url(/static/images/panel/img_head-left.png) repeat-x top right;
 		left: -296px;
 	}
 	&:after {
-		background: url(/static/images/panel/img_head-right.png) repeat-x top center;
+		background: url(/static/images/panel/img_head-right.png) repeat-x top left;
 		right: -296px;
 	}
-	h3 {
-		margin: 0;
-		color: $gold;
-		font-family: "friz";
-		font-size: 12px;
-		margin-top: 45px;
-		font-weight: 100;
+	.header-content {
+		width: 100%;
+		min-width: 135px;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		h3 {
+			margin: 0;
+			color: $gold;
+			font-family: "friz";
+			font-size: 12px;
+			margin-top: 45px;
+			font-weight: 100;
+		}
+		.points {
+			display: inline-block;
+			background: url(/static/images/panel/bg_points.png) no-repeat center center;
+			width: 90px;
+			height: 35px;
+			line-height: 35px;
+			position: relative;
+			top: -5px;
+			color: $whitish;
+			font-family: "friz";
+			letter-spacing: 1px;
+			font-size: 10px;
+			text-align: right;
+			padding-right: 40px;
+		}
 	}
-	.points {
-		display: inline-block;
-		background: url(/static/images/panel/bg_points.png) no-repeat center center;
-		width: 90px;
-		height: 35px;
-		line-height: 35px;
-		position: relative;
-		top: -5px;
-		color: $whitish;
-		font-family: "friz";
-		letter-spacing: 1px;
-		font-size: 10px;
-		text-align: right;
-		padding-right: 40px;
+}
+
+@media (max-width: 650px) {
+	#header {
+		&:before {
+			width: calc(50vw - 30px);
+			left: calc((50vw - 30px) * -1);
+		}
+		&:after {
+			width: calc(50vw - 30px);
+			right: calc((50vw - 30px) * -1);
+		}
+	}
+}
+
+@media (max-width: 460px) {
+	#header {
+		&:before, &:after {
+			height: 69px;
+		}
+		.header-content {
+			top: 6px;
+		}
 	}
 }

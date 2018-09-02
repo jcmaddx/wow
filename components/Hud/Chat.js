@@ -10,7 +10,7 @@ class Chat extends React.Component {
 	render() {
 		return (
 			<div id="chat">
-				<div className="chat-pane">
+				<div className="chat-pane" onClick={() => {document.getElementById('chatbox').focus()}}>
 					<div className="tab">General</div>
 					<div id="contain" className="message-contain">
 						<div ref="messages" id="messages" className="messages">

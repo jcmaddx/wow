@@ -40,3 +40,28 @@
 		}
 	}
 }
+
+@media (max-height: 660px), (max-width: 930px) {
+	.content.text {
+		overflow: auto;
+		p {
+			padding-right: 0;
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.content {
+		width: calc(100% - 3px);
+		&.text {
+			width: calc(100% - 43px);
+			h1 {
+				text-align: center;
+				font-size: 26px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+	}
+}

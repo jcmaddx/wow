@@ -10,7 +10,7 @@ const Hud = (props) => (
 		<MiniMap />
 		<ChatBubble hidden={true}/>
 		<Chat />
-		<ActionBar playRandom={props.playRandom}/>
+		<ActionBar handleEmote={props.handleEmote} playSound={props.playSound} playRandom={props.playRandom}/>
 	</div>
 )
 

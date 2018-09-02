@@ -55,19 +55,49 @@
 		"burn":{
 			"image": "/static/images/icons/bars/burn.png"
 		},
-		"ritual":{
-			"image": "/static/images/icons/bars/ritual.png"
+		"beg":{
+			"image": "/static/images/icons/bars/beg.png",
+			"emote": true,
+			"timer": 4700
 		},
-		"portal":{
-			"image": "/static/images/icons/bars/portal.png"
+		"cheer":{
+			"image": "/static/images/icons/bars/cheer.png",
+			"emote": true,
+			"timer": 2500
 		},
-		"dalaran":{
-			"image": "/static/images/icons/bars/dalaran.png",
-			"keybind": "J"
+		"laugh":{
+			"image": "/static/images/icons/bars/laugh.png",
+			"emote": true,
+			"timer": 3300
 		},
-		"hearth":{
-			"image": "/static/images/icons/bars/hearth.png",
-			"keybind": "V"
+		"cry":{
+			"image": "/static/images/icons/bars/cry.png",
+			"emote": true,
+			"timer": 4250
+		}
+	},
+	"left": {
+		"beg":{
+			"image": "/static/images/icons/bars/beg.png",
+			"emote": true,
+			"timer": 4700
+		},
+		"cheer":{
+			"image": "/static/images/icons/bars/cheer.png",
+			"emote": true,
+			"timer": 2500
+		}
+	},
+	"right": {
+		"laugh":{
+			"image": "/static/images/icons/bars/laugh.png",
+			"emote": true,
+			"timer": 3300
+		},
+		"cry":{
+			"image": "/static/images/icons/bars/cry.png",
+			"emote": true,
+			"timer": 4250
 		}
 	}
 }

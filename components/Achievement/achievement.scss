@@ -1,7 +1,8 @@
 @import "../../pages/global.scss";
 @import "../../static/fonts/fonts.scss";
 .achievement {
-	height: 80px;
+	height: auto;
+	min-height: 80px;
 	width: calc(100% - 4px);
 	max-width: 608px;
 	margin: 2px;
@@ -39,10 +40,11 @@
 		}
 	}
 	.description {
-		height: 50px;
-		padding-top: 10px;
-		width: 100%;
-		position: relative;
+		min-height:50px;
+		height: auto;
+    padding: 10px 70px 15px;
+    width: calc(100% - 140px);
+    position: relative;
 		&:before, &:after {
 			content: "";
 			position: absolute;

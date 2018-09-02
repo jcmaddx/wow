@@ -9,6 +9,15 @@
 	border-width: 40px;
   border-style: solid;
 	border-image: url(/static/images/panel/border-image.png) 40 40 40 40 fill repeat;
+	z-index: 10;
+	.close-pane {
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		top: -45px;
+		right: -45px;
+		background: url(/static/images/panel/btn-close.png) no-repeat center center;
+	}
 	.inner {
 		background: $brown;
 		padding: 2px;
@@ -18,5 +27,66 @@
 	}
 	&.hidden {
 		display: none;
+	}
+	.mobile-nav {
+		display: none;
+		width: 267px;
+		height: 64px;
+		padding: 0 30px;
+		background: url(/static/images/panel/mobile-nav.png) no-repeat center center;
+		position: absolute;
+		bottom: -103px;
+		left: 50%;
+		transform: translateX(-50%);
+		.nav-mobile {
+			display: inline-block;
+			vertical-align: top;
+			margin: 2px 3px 0;
+			width: 32px;
+			height: 41px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			&.summary {
+				background-image: url(/static/images/panel/summary.png);
+			}
+			&.skills {
+				background-image: url(/static/images/panel/skills.png);
+			}
+			&.professions {
+				background-image: url(/static/images/panel/professions.png);
+			}
+			&.education {
+				background-image: url(/static/images/panel/education.png);
+			}
+			&.reputation {
+				background-image: url(/static/images/panel/reputation.png);
+			}
+			&.exploration {
+				background-image: url(/static/images/panel/exploration.png);
+			}
+			&.pets {
+				background-image: url(/static/images/panel/pets.png);
+			}
+		}
+	}
+}
+
+@media (max-height: 750px) {
+	#pane {
+		height: calc(65vh - 76px);
+	}
+}
+
+@media (max-width: 860px) {
+	#pane {
+		width: calc(100vw - 100px);
+	}
+}
+
+@media (max-width: 650px) {
+	#pane {
+		.mobile-nav {
+			display: block;
+		}
 	}
 }

@@ -4,10 +4,11 @@ const Character = (props) => {
 	let characterclass = classnames({
 		"character": true,
 		[props.action]: true,
-		"show": (props.action === props.current)
+		"show": (props.action === props.current),
+		[props.location]: true
 	})
 	return (
-		<div id={"character-"+props.location} className={characterclass}></div>
+		<div className={characterclass}></div>
 	)
 }
 
