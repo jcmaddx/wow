@@ -14,10 +14,14 @@ ul {
 * {
 	cursor: url(/static/images/cursor.png), auto;
 }
+#__next, #app {
+	width: 100%;
+	height: 100%;
+}
 .main-content {
 	opacity: 1;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	background: url(/static/images/main_bg.jpg) no-repeat bottom center;
 	background-size: cover;
 	overflow: hidden;
