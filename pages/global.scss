@@ -21,6 +21,7 @@ ul {
 	background: url(/static/images/main_bg.jpg) no-repeat bottom center;
 	background-size: cover;
 	overflow: hidden;
+	position: relative;
 	&.hidden {
 		opacity: 0;
 	}
