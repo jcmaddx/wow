@@ -36,7 +36,7 @@ class Index extends Component {
 		queue.installPlugin(createjs.Sound);
 		queue.on("progress", (e) => {
 			let bar = document.getElementById('progress');
-			let update = Math.round((e.progress * 100));
+			let update = Math.round((e.progress * 100) + 3);
 			bar.style.width = update + "%";
 		});
 		queue.on("complete", complete, this);
