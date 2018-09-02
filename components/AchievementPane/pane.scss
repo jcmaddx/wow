@@ -90,23 +90,3 @@
 		}
 	}
 }
-
-@media screen and (max-width: 750px) and (orientation: landscape) {
-	#pane {
-		height: calc(65vw - 76px);
-	}
-}
-
-@media screen and (max-height: 860px) and (orientation: landscape) {
-	#pane {
-		width: calc(100vh - 100px);
-	}
-}
-
-@media screen and (max-height: 650px) and (orientation: landscape) {
-	#pane {
-		.mobile-nav {
-			display: block;
-		}
-	}
-}

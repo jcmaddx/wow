@@ -71,31 +71,7 @@
 	}
 }
 
-@media screen and (max-width: 650px) and (orientation: landscape) {
-	#header {
-		&:before {
-			width: calc(50vh - 30px);
-			left: calc((50vh - 30px) * -1);
-		}
-		&:after {
-			width: calc(50vh - 30px);
-			right: calc((50vh - 30px) * -1);
-		}
-	}
-}
-
 @media (max-width: 460px) {
-	#header {
-		&:before, &:after {
-			height: 69px;
-		}
-		.header-content {
-			top: 6px;
-		}
-	}
-}
-
-@media screen and (max-height: 460px) and (orientation: landscape) {
 	#header {
 		&:before, &:after {
 			height: 69px;

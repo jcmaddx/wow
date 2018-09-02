@@ -9,6 +9,7 @@ import Character from '../components/Character'
 import Hud from '../components/Hud'
 import Loading from '../components/Loading'
 import GetNew from '../components/Achievement/GetNew'
+import Landscape from '../components/Landscape'
 
 import "./global.scss"
 
@@ -187,6 +188,7 @@ class Index extends Component {
 						</AchievementPane>
 						<GetNew hidden={props.get}/>
 					</div> 
+					<Landscape />
 			</div>
 		)
 	}
