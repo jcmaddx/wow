@@ -4,7 +4,7 @@ const Character = (props) => {
 	let characterclass = classnames({
 		"character": true,
 		[props.action]: true,
-		"show": (props.action === props.current),
+		"show": (props.action === props.current || props.force),
 		[props.location]: true
 	})
 	return (

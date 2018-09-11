@@ -1,12 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import Achievement from '../components/Achievement';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import {Provider} from "react-redux"
+import configureStore from 'redux-mock-store'
+import Achievement from '../components/Achievement'
 import AchievementPane from '../components/AchievementPane'
 import Content from '../components/Content'
 import GetNew from '../components/Achievement/GetNew'
 
+const mockStore = configureStore();
+const store = mockStore({
+  text: "Thanks for Visiting"
+}) 
+
 storiesOf('Achievements', module)
+  .addDecorator(getStory => <Provider store={store}>{getStory()}</Provider>)
 	.add('Achievement Get', () => (
     <GetNew />
   ))
