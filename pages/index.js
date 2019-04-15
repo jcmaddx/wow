@@ -18,8 +18,17 @@ let animTimer;
 
 class Index extends Component {
 	static async getInitialProps () {
-		const res = await fetch('https://us.api.battle.net/wow/character/Nesingwary/Maygus?fields=stats&locale=en_US&apikey=nhpy2sjgwgy2gk3q557ka9r6vvjkq288')
-	  const data = await res.json()
+		// const res = await fetch('https://us.api.battle.net/wow/character/Nesingwary/Maygus?fields=stats&locale=en_US&apikey=nhpy2sjgwgy2gk3q557ka9r6vvjkq288')
+	  // API Changed. Using Static data for now.
+	  const data = {
+	  	achievementPoints: 14055,
+	  	name: "Maygus",
+	  	level: 120,
+	  	stats: {
+	  		health: 196000,
+	  		power: 100000
+	  	}
+	  }
 	  return {
 	    character: data
 	  }
