@@ -131,6 +131,9 @@ class Index extends Component {
 			} else if(text === '/beg') {
 				this.handleEmote(code, 4700);
 				message = "You beg everyone around you. How pathetic.";
+			} else if(text == '/addon'){
+				document.getElementById("addon").click();
+				message = "Thank you for downloading my addon!";
 			} else { // invalid command
 				isValid = false;
 				messages.insertAdjacentHTML('beforeend', '<p class="error">That is not a valid command.</p>');

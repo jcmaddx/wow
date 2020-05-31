@@ -87,6 +87,16 @@
 	],
 	"professions" : [
 		{
+			"title": "Blizzard Entertainment",
+			"description": "Media Networks / MLG.  Making the sites as well as the tools that make them possible.",
+			"icon": "/static/images/icons/achievements/jobs/blizzard.png",
+			"points": 500,
+			"date": "12/16/19",
+			"special": true,
+			"unearned": false,
+			"reward": "Title: Software Engineer"
+		},
+		{
 			"title": "NCSoft",
 			"description": "Korean MMO Giant. Using: React.js, Redux, Webpack, Grunt, Jekyll",
 			"icon": "/static/images/icons/achievements/jobs/ncsoft.png",
@@ -161,14 +171,6 @@
 			"date": "07/20/03",
 			"special": false,
 			"unearned": false
-		},
-		{
-			"title": "Blizzard Entertainment",
-			"description": "Building awesome sites for awesome games",
-			"icon": "/static/images/icons/achievements/jobs/blizzard.png",
-			"points": 500,
-			"special": false,
-			"unearned": true
 		}
 	],
 	"education" : [
@@ -211,17 +213,17 @@
 	],
 	"reputation" : [
 		{
-			"title": "Jason Chen",
-			"description": "Current Co-Worker at NCSoft",
-			"icon": "/static/images/icons/achievements/references/jason.png",
-			"points": 200,
-			"special": false,
-			"unearned": false
-		},
-		{
 			"title": "Nick Hamer",
 			"description": "Previous Co-Worker at NCSoft",
 			"icon": "/static/images/icons/achievements/references/nick.png",
+			"points": 200,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Jason Chen",
+			"description": "Previous Co-Worker at NCSoft",
+			"icon": "/static/images/icons/achievements/references/jason.png",
 			"points": 200,
 			"special": true,
 			"unearned": false

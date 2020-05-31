@@ -16,6 +16,7 @@ class Chat extends React.Component {
 						<div ref="messages" id="messages" className="messages">
 							<p className="error">Press "Y" to open Achievements Pane.</p>
 							<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
+							<p className="error">Download My Addon: /addon</p>
 						</div>
 					</div>
 				</div>
@@ -23,6 +24,7 @@ class Chat extends React.Component {
 					<span>Say:</span>
 					<input id="chatbox" onFocus={() => {this.toggleLocked(true)}} onBlur={() => {this.toggleLocked(false)}} ref="chatbox" type="text"></input>
 				</div>
+				<a id="addon" style={{display: "none"}} href="/static/files/AltVault.zip" download="AltVault.zip">AltVault</a>
 			</div>
 		)
 	}
