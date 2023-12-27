@@ -1,4 +1,4 @@
-@import "../../pages/global.scss";
+@import '../../pages/variables.scss';
 @import "../../static/fonts/fonts.scss";
 .icon {
 	max-width: 45px;
@@ -26,6 +26,11 @@
 			right: 15%;
 			font-size: 14px;
 		}
+	}
+	&.achievement {
+		position: absolute;
+		z-index: 10;
+		top: 20px;
 	}
 	&.skill {
 		display: inline-block;

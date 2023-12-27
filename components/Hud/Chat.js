@@ -1,33 +1,39 @@
-import React from 'react';
-import {connect} from "react-redux";
-import './chat.scss'
+import React, {useContext, useRef} from 'react';
+import { Context } from '../../pages/appContext'
+import styles from './chat.module.scss'
 
-class Chat extends React.Component {
-	toggleLocked = (status) => {
-		this.props.dispatch({type: "LOCK", value: status})
+const Chat = (props) => {
+	const messageRef = useRef()
+	const { state, dispatch } = useContext(Context);
+	props.chatStyleRef.current = styles.hidden
+
+	const toggleLocked = (status) => {
+		dispatch({type: "LOCK", value: status})
 	}
 
-	render() {
-		return (
-			<div id="chat">
-				<div className="chat-pane" onClick={() => {document.getElementById('chatbox').focus()}}>
-					<div className="tab">General</div>
-					<div id="contain" className="message-contain">
-						<div ref="messages" id="messages" className="messages">
-							<p className="error">Press "Y" to open Achievements Pane.</p>
-							<p className="error">Emotes Available: /laugh, /cry, /beg, /cheer</p>
-							<p className="error">Download My Addon: /addon</p>
-						</div>
+	const textChanged = (e) => {
+		props.chatboxRef.current = e.target
+	}
+
+	return (
+		<div id="chat" className={styles.chat}>
+			<div className={styles.chatpane} onClick={() => {document.getElementById('chatbox').focus()}}>
+				<div className={styles.tab}>General</div>
+				<div id="contain" className={styles.messagecontain}>
+					<div ref={messageRef} id="messages" className={styles.messages}>
+						<p className={styles.error}>Press "Y" to open Achievements Pane.</p>
+						<p className={styles.error}>Emotes Available: /laugh, /cry, /beg, /cheer</p>
+						<p className={styles.error}>Download My Addon: /addon</p>
 					</div>
 				</div>
-				<div className="chat-input">
-					<span>Say:</span>
-					<input id="chatbox" onFocus={() => {this.toggleLocked(true)}} onBlur={() => {this.toggleLocked(false)}} ref="chatbox" type="text"></input>
-				</div>
-				<a id="addon" style={{display: "none"}} href="/static/files/AltVault.zip" download="AltVault.zip">AltVault</a>
 			</div>
-		)
-	}
+			<div className={styles.chatinput}>
+				<span>Say:</span>
+				<input id="chatbox" onChange={textChanged} onFocus={() => {toggleLocked(true)}} onBlur={() => {toggleLocked(false)}} ref={props.chatboxRef} type="text"></input>
+			</div>
+			<a id="addon" style={{display: "none"}} href="/static/files/AltVault.zip" download="AltVault.zip">AltVault</a>
+		</div>
+	)
 }
 
-export default connect(state=>state)(Chat)
+export default Chat

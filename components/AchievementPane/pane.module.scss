@@ -1,5 +1,5 @@
-@import "../../pages/global.scss";
-#pane {
+@import '../../pages/variables.scss';
+.pane {
 	width: 770px;
 	height: 500px;
 	position: absolute;
@@ -10,7 +10,7 @@
   border-style: solid;
 	border-image: url(/static/images/panel/border-image.png) 40 40 40 40 fill repeat;
 	z-index: 10;
-	.close-pane {
+	.closepane {
 		width: 32px;
 		height: 32px;
 		position: absolute;
@@ -28,7 +28,7 @@
 	&.hidden {
 		display: none;
 	}
-	.mobile-nav {
+	.mobilenav {
 		display: none;
 		width: 267px;
 		height: 64px;
@@ -38,7 +38,7 @@
 		bottom: -103px;
 		left: 50%;
 		transform: translateX(-50%);
-		.nav-mobile {
+		.navmobile {
 			display: inline-block;
 			vertical-align: top;
 			margin: 2px 3px 0;
@@ -72,20 +72,20 @@
 }
 
 @media (max-height: 750px) {
-	#pane {
+	.pane {
 		height: calc(65vh - 76px);
 	}
 }
 
 @media (max-width: 860px) {
-	#pane {
+	.pane {
 		width: calc(100vw - 100px);
 	}
 }
 
 @media (max-width: 650px) {
-	#pane {
-		.mobile-nav {
+	.pane {
+		.mobilenav {
 			display: block;
 		}
 	}

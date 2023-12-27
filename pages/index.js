@@ -1,8 +1,6 @@
 import {withRouter} from 'next/router'
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import fetch from 'isomorphic-unfetch'
-import withRedux from "next-redux-wrapper";
+import React, {useContext, useEffect, useRef} from "react";
+import { useRouter } from 'next/router'
 import AchievementPane from '../components/AchievementPane'
 import Content from '../components/Content'
 import Character from '../components/Character'
@@ -10,36 +8,41 @@ import Hud from '../components/Hud'
 import Loading from '../components/Loading'
 import GetNew from '../components/Achievement/GetNew'
 import Landscape from '../components/Landscape'
+import { Context } from './appContext';
 
-import "./global.scss"
+import chatStyles from '../components/Hud/'
 
 let bubbleTime;
 let animTimer;
 
-class Index extends Component {
-	static async getInitialProps () {
-		// const res = await fetch('https://us.api.battle.net/wow/character/Nesingwary/Maygus?fields=stats&locale=en_US&apikey=nhpy2sjgwgy2gk3q557ka9r6vvjkq288')
-	  // API Changed. Using Static data for now.
-	  const data = {
-	  	achievementPoints: 14055,
-	  	name: "Maygus",
-	  	level: 120,
-	  	stats: {
-	  		health: 196000,
-	  		power: 100000
-	  	}
-	  }
-	  return {
-	    character: data
-	  }
+const Index = () => {
+	const { state, dispatch } = useContext(Context);
+	const hideRef = useRef(state.hide)
+	const lockRef = useRef(state.locked)
+	const chatStyleRef = useRef()
+	const chatboxRef = useRef()
+	const router = useRouter();
+	const character =  {
+		achievementPoints: 14055,
+		name: "Maygus",
+		level: 120,
+		stats: {
+			health: 196000,
+			power: 100000
+		}
 	}
 
-	componentDidMount() {
-		window.addEventListener("keyup", this.handleKeys);
+	useEffect(() => {
+		hideRef.current = state.hide
+		lockRef.current = state.locked
+	}, [state])
+
+	useEffect(() => {
+		window.addEventListener("keyup", handleKeys);
 		let complete = () => {
 			document.getElementById('main-content').classList.remove('hidden')
-			this.props.dispatch({type: 'INTRO', value: false});
-			this.intro();
+			dispatch({type: 'INTRO', value: false})
+			intro();
 		};
 		var queue = new createjs.LoadQueue();
 		createjs.Sound.alternateExtensions = ["mp3"];
@@ -47,63 +50,64 @@ class Index extends Component {
 		queue.on("progress", (e) => {
 			let bar = document.getElementById('progress');
 			let update = Math.round((e.progress * 100));
-			bar.style.width = update + "%";
+			if(bar){
+				bar.style.width = update + "%";
+			}
 		});
 		queue.on("complete", complete, this);
 		queue.loadManifest("/static/manifest.json");
-	}
+	}, [])
 
-	handleKeys = (e) => {
+	const handleKeys = (e) => {
 		let code = e.keyCode;
-		let box = document.getElementById('chatbox');
-		if(!this.props.locked){
+		let chatBox = chatboxRef.current;
+		if(!lockRef.current){
 			switch(true) {
 				case (code === 89): // Y Key for achievement pane
-					if(this.props.hide){
-						this.props.dispatch({type: "ACHIEVEMENTS", value: false})
-						this.playSound('openmenu')
+					if(hideRef.current){
+						dispatch({type: 'ACHIEVEMENTS', value: false})
+						playSound('openmenu')
 					} else {
-						this.props.dispatch({type: "ACHIEVEMENTS", value: true})
-						this.playSound('closemenu')
+						dispatch({type: 'ACHIEVEMENTS', value: true})
+						playSound('closemenu')
 					}
 					break;
 				case ((code > 47 && code < 58) || code === 187 || code === 189 || code === 74 || code === 86): // Number keys
-					this.playRandom();
+					playRandom();
 					break;
 				case (code === 191 || code === 13): // Slash and enter for chat
-					
 					if(code === 191){
-						box.value = '/'; //set slash for emotes in box
+						chatBox.value = '/'; //set slash for emotes in box
 					}
-					box.focus();
+					chatBox.focus();
 					break;
 			}
 		} else {
 			if(code === 27) { //escape pressed while focused
-				box.blur();
+				chatBox.blur();
 			} else if(code === 13) { // pressed enter in the box
-				let text = box.value;
+				let text = chatBox.value;
 				if(text !== "") {
-					this.handleChat(text);
-					box.value = '';
+					handleChat(text);
+					chatBox.value = '';
 				}
-				box.blur();
+				chatBox.blur();
 			}
 		}
 	}
 
-	handleEmote = (id, timer) => {
+	const handleEmote = (id, timer) => {
 		switch(id){
 			case 'cheer':
-				this.props.dispatch({type: 'ANIMATE', value: id});
+				dispatch({type: 'ANIMATE', value: id})
 				let sound = 'cheer'+ (Math.floor(Math.random() * 2) + 1);
-				this.playSound(sound);
+				playSound(sound);
 				break;
 			case 'laugh':
 			case 'cry':
 			case 'beg':
-				this.props.dispatch({type: 'ANIMATE', value: id});
-				this.playSound(id);
+				dispatch({type: 'ANIMATE', value: id})
+				playSound(id);
 				break;
 			default:
 				return false
@@ -111,29 +115,29 @@ class Index extends Component {
 		}
 		clearTimeout(animTimer);
 		animTimer = setTimeout(() => {
-			this.props.dispatch({type: 'ANIMATE', value: 'stand'});
+			dispatch({type: 'ANIMATE', value: 'stand'})
 		}, timer)
 	}
 
-	handleChat = (text) => {
+	const handleChat = (text) => {
 		let message, messages = document.getElementById('messages'), container = document.getElementById('contain');
 		if(text.charAt(0) === '/'){ // trying a command
 			let timer, isValid = true, code = text.substring(1);
 			if(text === '/cheer') {
-				this.handleEmote(code, 2500);
+				handleEmote(code, 2500);
 				message = "You cheer!";
 			} else if(text === '/laugh') {
-				this.handleEmote(code, 3300);
+				handleEmote(code, 3300);
 				message = "You laugh.";
 			} else if(text === '/cry') {
-				this.handleEmote(code, 4250);
+				handleEmote(code, 4250);
 				message = "You cry.";
 			} else if(text === '/beg') {
-				this.handleEmote(code, 4700);
+				handleEmote(code, 4700);
 				message = "You beg everyone around you. How pathetic.";
 			} else if(text == '/addon'){
-				document.getElementById("addon").click();
-				message = "Thank you for downloading my addon!";
+				window.open('https://www.curseforge.com/wow/addons/altvault', '_blank').focus()
+				message = "Thank you for checking out AltVault!"
 			} else { // invalid command
 				isValid = false;
 				messages.insertAdjacentHTML('beforeend', '<p class="error">That is not a valid command.</p>');
@@ -147,60 +151,57 @@ class Index extends Component {
 			let bubble = document.getElementById('chat-bubble');
 			messages.insertAdjacentHTML('beforeend', '<p>[<span class="player">Maygus</span>] says: '+text+'</p>');
 			container.scrollTop = contain.scrollHeight; // keep scrolled to the bottom for new messages
-			this.props.dispatch({type: 'TALK', value: text});
-			this.props.dispatch({type: 'ANIMATE', value: 'talk'});
-			bubble.classList.remove('hidden')
+			dispatch({type: 'TALK', value: text})
+			dispatch({type: 'ANIMATE', value: 'talk'})
+			bubble.classList.remove(chatStyleRef.current)
 			clearTimeout(bubbleTime);
 			bubbleTime = setTimeout(() => {
-				bubble.classList.add('hidden')
-				this.props.dispatch({type: 'ANIMATE', value: 'stand'});
+				bubble.classList.add(chatStyleRef.current)
+				dispatch({type: 'ANIMATE', value: 'stand'})
 			}, 4000)
 		}
 	}
 
-	playSound = (id) => {
+	const playSound = (id) => {
 		createjs.Sound.createInstance(id).play();
 	}
 
-	playRandom = () => {
+	const playRandom = () => {
 		let options = ['notyet1', 'notyet2', 'notarget1', 'notarget2'];
 		let rando = Math.floor(Math.random()*4);
-		this.playSound(options[rando]);
+		playSound(options[rando]);
 	}
 
-	intro = () => {
-		this.playSound('achievement-get');
-		this.props.dispatch({type: "GET", value: false})
-		this.props.dispatch({type: "ANIMATE", value: "cheer"})
+	const intro = () => {
+		playSound('achievement-get');
+		dispatch({type: 'GET', value: false})
+		dispatch({type: 'ANIMATE', value: 'cheer'})
 		setTimeout(() => {
-			this.props.dispatch({type: "ANIMATE", value: "stand"})
-			this.playSound('openmenu');
-			this.props.dispatch({type: "ACHIEVEMENTS", value: false})
+			dispatch({type: 'ANIMATE', value: 'stand'})
+			playSound('openmenu');
+			dispatch({type: 'ACHIEVEMENTS', value: false})
 		},5000)
 	}
 
-	render() {
-		let props = this.props
-		return (
-			<div id="app">
-					{ (props.loading) ? <Loading /> : null }
-					<div id="main-content" className="main-content hidden">
-						<Character location="main" current={props.action} action="stand" />
-						<Character location="main" current={props.action} action="cheer" />
-						<Character location="main" current={props.action} action="talk" />
-						<Character location="main" current={props.action} action="laugh" />
-						<Character location="main" current={props.action} action="cry" />
-						<Character location="main" current={props.action} action="beg" />
-						<Hud handleEmote={this.handleEmote} playSound={this.playSound} playRandom={this.playRandom} character={props.character}/>
-						<AchievementPane playSound={this.playSound} hidden={props.hide} points={props.character.achievementPoints.toLocaleString()}>
-							<Content page={(props.router.query.page) ? props.router.query.page : 'summary'} />
-						</AchievementPane>
-						<GetNew hidden={props.get}/>
-					</div> 
-					<Landscape />
-			</div>
-		)
-	}
+	return (
+		<div id="app">
+			{ (state.loading) ? <Loading /> : null }
+			<div id="main-content" className="main-content hidden">
+				<Character location="main" current={state.action} action="stand" />
+				<Character location="main" current={state.action} action="cheer" />
+				<Character location="main" current={state.action} action="talk" />
+				<Character location="main" current={state.action} action="laugh" />
+				<Character location="main" current={state.action} action="cry" />
+				<Character location="main" current={state.action} action="beg" />
+				<Hud handleEmote={handleEmote} playSound={playSound} playRandom={playRandom} character={character} chatboxRef={chatboxRef} chatStyleRef={chatStyleRef}/>
+				<AchievementPane playSound={playSound} points={character.achievementPoints.toLocaleString()}>
+					<Content page={(router.query.page) ? router.query.page : 'summary'} />
+				</AchievementPane>
+				<GetNew hidden={state.get}/>
+			</div> 
+			<Landscape />
+		</div>
+	)
 }
 
-export default withRouter(connect(state=>state)(Index))
+export default withRouter(Index)

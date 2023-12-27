@@ -1,6 +1,6 @@
 @import "../../static/fonts/fonts.scss";
-@import "../../pages/global.scss";
-.sidenav-link {
+@import '../../pages/variables.scss';
+.sidenavlink {
 	height: 25px;
 	background: url('/static/images/panel/btn_nav.jpg') repeat-x top left;
 	background-size: auto 50px;

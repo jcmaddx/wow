@@ -1,13 +1,10 @@
-import React from 'react';
-import {connect} from "react-redux";
-import './chat.scss'
-import classnames from 'classnames'
+import React, {useContext} from 'react';
+import styles from './chat.module.scss'
+import {Context} from '../../pages/appContext'
 
 const ChatBubble = (props) => {
-	let bubbleClass = classnames({
-		'hidden': props.hidden
-	})
-	return <div id="chat-bubble" className={bubbleClass}>{props.text}</div>
+	const { state } = useContext(Context);
+	return <div id="chat-bubble" className={`${styles.chatbubble} ${props.hidden ? styles.hidden : ''}`}>{state.text}</div>
 }
 
-export default connect(state=>state)(ChatBubble)
+export default ChatBubble

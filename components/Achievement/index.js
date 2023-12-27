@@ -1,31 +1,25 @@
-import classnames from 'classnames'
 import Icon from '../Icon'
-import './achievement.scss'
+import styles from './achievement.module.scss'
 const Achievement = (props) => {
-	let achclass = classnames({
-		"achievement": true,
-		"unearned": props.unearned,
-		"special": props.special
-	});
 	return (
-		<div className={achclass}>
-			<Icon image={props.image} frame={true} />
+		<div className={`${styles.achievement} ${props.unearned ? styles.unearned : ''} ${props.special ? styles.special : ''}`}>
+			<Icon image={props.image} frame={true} type="achievement" />
 			<h4>{props.title}</h4>
-			<div className="description">
+			<div className={styles.description}>
 				<p>{props.description}</p>
 			</div>
 			{
 				(props.reward) ? 
-					<div className="reward">
+					<div className={styles.reward}>
 						<p>{props.reward}</p>
 					</div>
 				: null
 			}
-			<div className="points">
-				<div className="shield">{props.points}</div>
+			<div className={styles.points}>
+				<div className={styles.shield}>{props.points}</div>
 				{
 					(props.date) ? 
-						<p className="date">{props.date}</p>
+						<p className={styles.date}>{props.date}</p>
 					: null
 				}
 			</div> 

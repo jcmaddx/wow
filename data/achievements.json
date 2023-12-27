@@ -88,6 +88,16 @@
 	"professions" : [
 		{
 			"title": "Blizzard Entertainment",
+			"description": "Battle.net Catalog team. Creating internal tooling to power the commerce of all of the games. Remade PMT (Product Management Tool), SFM (Storefront Management) and RDM (Reference Data Management) tools.",
+			"icon": "/static/images/icons/achievements/jobs/blizzard.png",
+			"points": 500,
+			"date": "01/09/20",
+			"special": true,
+			"unearned": false,
+			"reward": "Title: Senior Software Engineer I"
+		},
+		{
+			"title": "Blizzard Entertainment",
 			"description": "Media Networks / MLG.  Making the sites as well as the tools that make them possible.",
 			"icon": "/static/images/icons/achievements/jobs/blizzard.png",
 			"points": 500,
@@ -213,9 +223,25 @@
 	],
 	"reputation" : [
 		{
-			"title": "Nick Hamer",
-			"description": "Previous Co-Worker at NCSoft",
-			"icon": "/static/images/icons/achievements/references/nick.png",
+			"title": "Gary James",
+			"description": "Previous Manager at Blizzard",
+			"icon": "/static/images/icons/achievements/references/gary.png",
+			"points": 200,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "Jason Goodrich",
+			"description": "Current Co-Worker at Blizzard",
+			"icon": "/static/images/icons/achievements/references/goodrich.png",
+			"points": 200,
+			"special": true,
+			"unearned": false
+		},
+		{
+			"title": "David Valentine",
+			"description": "Previous Co-Worker at Blizzard",
+			"icon": "/static/images/icons/achievements/references/david.png",
 			"points": 200,
 			"special": true,
 			"unearned": false
@@ -223,23 +249,7 @@
 		{
 			"title": "Jason Chen",
 			"description": "Previous Co-Worker at NCSoft",
-			"icon": "/static/images/icons/achievements/references/jason.png",
-			"points": 200,
-			"special": true,
-			"unearned": false
-		},
-		{
-			"title": "Andrew Niculescu",
-			"description": "Previous Manager at NCSoft",
-			"icon": "/static/images/icons/achievements/references/andrew.png",
-			"points": 200,
-			"special": false,
-			"unearned": false
-		},
-		{
-			"title": "Doug Chomicz",
-			"description": "Previous Co-Worker at Zeekee and Ebsco",
-			"icon": "/static/images/icons/achievements/references/doug.png",
+			"icon": "/static/images/icons/achievements/references/chen.png",
 			"points": 200,
 			"special": false,
 			"unearned": false

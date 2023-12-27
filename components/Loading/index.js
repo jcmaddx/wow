@@ -1,9 +1,9 @@
-import './loading.scss'
+import styles from './loading.module.scss'
 const Loading = (props) => (
-	<div className="loading">
-		<div id="loading-bar">
-			<div className="frame"></div>
-			<div id="progress"></div>
+	<div className={styles.loading}>
+		<div id="loading-bar" className={styles.loadingbar}>
+			<div className={styles.frame}></div>
+			<div id="progress" className={styles.progress}></div>
 		</div>
 	</div>
 )

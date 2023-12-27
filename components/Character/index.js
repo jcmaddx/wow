@@ -1,14 +1,7 @@
-import "./character.scss"
-import classnames from 'classnames'
+import styles from "./character.module.scss"
 const Character = (props) => {
-	let characterclass = classnames({
-		"character": true,
-		[props.action]: true,
-		"show": (props.action === props.current || props.force),
-		[props.location]: true
-	})
 	return (
-		<div className={characterclass}></div>
+		<div className={`${styles.character} ${styles[props.action]} ${styles[props.location]} ${props.action === props.current || props.force ? styles.show : ''}`}></div>
 	)
 }
 

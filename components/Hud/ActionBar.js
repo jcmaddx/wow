@@ -1,23 +1,26 @@
-import './actionBar.scss'
+import {useContext} from 'react'
+import styles from './actionBar.module.scss'
+import {Context} from '../../pages/appContext'
 import Icon from '../Icon'
 import skills from '../../data/skills.json'
-import {connect} from "react-redux";
 const ActionBar = (props) => {
+	const { state, dispatch } = useContext(Context);
+
 	let togglePane = () => {
-		if(props.hide){
-			props.dispatch({type: "ACHIEVEMENTS", value: false})
+		if(state.hide){
+			dispatch({type: 'ACHIEVEMENTS', value: false})
 			props.playSound('openmenu')
 		} else {
-			props.dispatch({type: "ACHIEVEMENTS", value: true})
+			dispatch({type: 'ACHIEVEMENTS', value: true})
 			props.playSound('closemenu')
 		}
 	}
 	return (
 		<div className="bars">
-			<div id="actionbar">
-				<div className="bar-frame">
-					<div className="skills">
-						<div className="primary">
+			<div id="actionbar" className={styles.actionbar}>
+				<div className={styles.barframe}>
+					<div className={styles.skills}>
+						<div className={styles.primary}>
 							{
 								Object.keys(skills.primary).map((i, key) => {
 									let item = skills.primary[i];
@@ -25,8 +28,8 @@ const ActionBar = (props) => {
 								})
 							}
 						</div>
-						<div className="achieve-button" onClick={togglePane}></div>
-						<div className="secondary">
+						<div className={styles.achievebutton} onClick={togglePane}></div>
+						<div className={styles.secondary}>
 							{
 								Object.keys(skills.secondary).map((i, key) => {
 									let item = skills.secondary[i];
@@ -36,10 +39,10 @@ const ActionBar = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="ap-bar"></div>
+				<div className={styles.apbar}></div>
 			</div>
-			<div id="mobile-bar">
-				<div className="left">
+			<div id="mobile-bar" className={styles.mobilebar}>
+				<div className={styles.left}>
 					{
 						Object.keys(skills.left).map((i, key) => {
 							let item = skills.left[i];
@@ -47,8 +50,8 @@ const ActionBar = (props) => {
 						})
 					}
 				</div>
-				<div className="achieve-button" onClick={togglePane}></div>
-				<div className="right">
+				<div className={styles.achievebutton} onClick={togglePane}></div>
+				<div className={styles.right}>
 					{
 						Object.keys(skills.right).map((i, key) => {
 							let item = skills.right[i];
@@ -62,4 +65,4 @@ const ActionBar = (props) => {
 	)
 }
 
-export default connect(state=>state)(ActionBar)
+export default ActionBar

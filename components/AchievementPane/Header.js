@@ -1,9 +1,9 @@
-import "./header.scss"
+import styles from "./header.module.scss"
 const Header = (props) => (
-	<div id="header">
-		<div className="header-content">
+	<div id="header" className={styles.header}>
+		<div className={styles.headercontent}>
 			<h3>Achievement Points</h3>
-			<div className="points">{props.points}</div>
+			<div className={styles.points}>{props.points}</div>
 		</div>
 	</div>
 )

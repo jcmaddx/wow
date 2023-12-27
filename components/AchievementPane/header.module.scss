@@ -1,6 +1,6 @@
-@import "../../pages/global.scss";
+@import '../../pages/variables.scss';
 @import "../../static/fonts/fonts.scss";
-#header {
+.header {
 	height: 95px;
 	width: calc(100% - 552px);
   top: -110px;
@@ -24,7 +24,7 @@
 		background: url(/static/images/panel/img_head-right.png) repeat-x top left;
 		right: -296px;
 	}
-	.header-content {
+	.headercontent {
 		width: 100%;
 		min-width: 135px;
 		position: absolute;
@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 650px) {
-	#header {
+	.header {
 		&:before {
 			width: calc(50vw - 30px);
 			left: calc((50vw - 30px) * -1);
@@ -72,7 +72,7 @@
 }
 
 @media (max-width: 460px) {
-	#header {
+	.header {
 		&:before, &:after {
 			height: 69px;
 		}

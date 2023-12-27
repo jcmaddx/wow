@@ -7,7 +7,7 @@
 	top: 0;
 	left: 0;
 	z-index: 100;
-	#loading-bar {
+	.loadingbar {
 		width: 80%;
 		max-width: 964px;
 		height: 64px;
@@ -40,7 +40,7 @@
 			left: 0;
 			z-index: 1;
 		}
-		#progress {
+		.progress {
 			display: block;
 			content: "";
 			height: 38px;
@@ -74,7 +74,7 @@
 	.loading {
 		background: url(/static/images/loading/bfa.png) no-repeat center 100px, url(/static/images/loading/bg-rock.png) repeat center center;
 		background-size: 350px auto, auto;
-		#loading-bar {
+		.loadingbar {
 			bottom: auto;
 			top: 50%;
 		}

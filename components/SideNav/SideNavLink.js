@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import "./sideNavLink.scss"
+import styles from "./sideNavLink.module.scss"
 const SideNavLink = (props) => (
-	<li className="sidenav-link">
+	<li className={styles.sidenavlink}>
 		<Link as={`/${props.page}/`} href={`/?page=${props.page}`}>
-			<a>{props.title}</a>
+			<span>{props.title}</span>
 		</Link>
 	</li>
 )

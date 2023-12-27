@@ -1,6 +1,6 @@
-@import "../../pages/global.scss";
+@import '../../pages/variables.scss';
 @import "../../static/fonts/fonts.scss";
-#player {
+.player {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -29,14 +29,14 @@
 	.name {
 		position: absolute;
 		top: 16px;
-    left: 72px;
-    height: 18px;
-    line-height: 18px;
-    width: 118px;
-    color: $gold;
-    font-size: 12px;
-    text-align: center;
-    z-index: 3;
+		left: 72px;
+		height: 18px;
+		line-height: 18px;
+		width: 118px;
+		color: $gold;
+		font-size: 12px;
+		text-align: center;
+		z-index: 3;
 	}
 	.bar {
 		color: white;

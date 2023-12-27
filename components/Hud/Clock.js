@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 let timer;
 
-export default class extends React.Component {
-	
-	componentDidMount(){
-		this._updateClock();
-	}
+const Clock = () => {
+	const hourRef = useRef()
+	const minuteRef = useRef()
+	useEffect(() => {
+		_updateClock();
+		return () => clearInterval(timer);
+	}, [])
 
-	componentWillUnmount(){
-		clearInterval(timer);
-	}
-
-	_updateClock = () => {
+	const _updateClock = () => {
 	  let today = new Date();
 	  let hour = today.getHours();
 	  let minute = today.getMinutes();
@@ -21,18 +19,18 @@ export default class extends React.Component {
 		  hour = 12;
 		}
 	  minute = (minute < 10) ? "0" + minute : minute;
-	  this.refs.hours.innerHTML = hour;
-	  this.refs.minutes.innerHTML = minute;
+	  hourRef.current.innerHTML = hour;
+	  minuteRef.current.innerHTML = minute;
 	  timer = setTimeout(() => {
-	  	this._updateClock();
+	  	_updateClock();
 	  }, 1000);
 	}
 
-	render () {
-		return (
-			<div className="clock">
-				<span ref="hours" className="hours"></span>:<span ref="minutes" className="minutes"></span>
-			</div>
-		)
-	}
+	return (
+		<div className="clock">
+			<span ref={hourRef} className="hours"></span>:<span ref={minuteRef} className="minutes"></span>
+		</div>
+	)
 }
+
+export default Clock

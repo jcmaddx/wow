@@ -1,21 +1,15 @@
-import classnames from 'classnames'
-import './icon.scss'
+import styles from './icon.module.scss'
 const Icon = (props) => {
-	let iconclass = classnames({
-		"icon": true,
-		"framed": props.frame,
-		[props.type]: !!props.type
-	})
 	return (
-		<div onClick={(props.cb) ? props.cb : () => { return false }} className={iconclass}>
+		<div onClick={(props.cb) ? props.cb : () => { return false }} className={`${styles.icon} ${props.frame ? styles.framed : ''} ${props.type === 'achievement' ? styles.achievement : ''} ${props.type === 'skill' ? styles.skill : ''}`}>
 			{
 				(props.keybind) ? 
-				<p className="keybind">{props.keybind}</p>
+				<p className={styles.keybind}>{props.keybind}</p>
 				: null
 			}
 			{
 				(props.uses) ? 
-				<p className="uses">{props.uses}</p>
+				<p className={styles.uses}>{props.uses}</p>
 				: null
 			}
 			<img src={props.image} />

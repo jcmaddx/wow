@@ -1,5 +1,5 @@
-@import "../../pages/global.scss";
-#actionbar {
+@import '../../pages/variables.scss';
+.actionbar {
 	display: block;
 	position: absolute;
 	bottom: 0;
@@ -7,7 +7,7 @@
 	transform: translateX(-50%);
 	height: 76px;
 	width: 961px;
-	.bar-frame {
+	.barframe {
 		width: 100%;
 		height: 100%;
 		background: url(/static/images/hud/bars/main/main-bar.png) no-repeat bottom center;
@@ -17,24 +17,24 @@
 			height: 55%;
 			width: 80%;
 			top: 31%;
-		  left: 10%;
+		    left: 10%;
 			.primary {
-		    width: calc(70% - 30px);
-		    height: 100%;
-		    display: inline-block;
-		    vertical-align: top;
-		    padding-left: 7px;
+				width: calc(70% - 30px);
+				height: 100%;
+				display: inline-block;
+				vertical-align: top;
+				padding-left: 7px;
 			}
 			.secondary {
 				width: calc(30% - 18px);
-		    height: 100%;
-		    display: inline-block;
-		    vertical-align: top;
-		    padding-left: 7px;
+				height: 100%;
+				display: inline-block;
+				vertical-align: top;
+				padding-left: 7px;
 			}
 		}
 	}
-	.ap-bar {
+	.apbar {
 		position: absolute;
 		bottom: 0;
 		left: 10%;
@@ -45,14 +45,14 @@
 		box-shadow: inset 0 -4px 4px 0 rgba(0,0,0,0.6);
 	}
 }
-.achieve-button {
-	display: inline-block;
+.achievebutton {
+  display: inline-block;
   vertical-align: top;
   width: 32px;
   height: 100%;
   background: url(/static/images/hud/bars/main/btn-ach.png) no-repeat center center;
 }
-#mobile-bar {
+.mobilebar {
 	display: none;
 	position: absolute;
 	bottom: 0;
@@ -61,7 +61,7 @@
 	width: 369px;
 	height: 61px;
 	background: url(/static/images/hud/bars/main/main-bar-mobile.png) no-repeat bottom center;
-	.achieve-button {
+	.achieveButton {
 		height: 40px;
 		margin: 20px 2px 0 2px;
 	}
@@ -80,10 +80,10 @@
 }
 
 @media (max-width: 1023px) {
-	#actionbar {
+	.actionbar {
 		display: none;
 	}
-	#mobile-bar {
+	.mobilebar {
 		display: block;
 	}
 }

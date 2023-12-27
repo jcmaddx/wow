@@ -1,11 +1,10 @@
 import achievements from '../../data/achievements'
 import Achievement from '../Achievement'
 import Character from '../Character'
-import classnames from 'classnames'
-import './content.scss'
+import styles from './content.module.scss'
 const Content = (props) => {
 	let data = achievements[props.page];
-	let content;;
+	let content;
 	if(props.page === 'summary') {
 		content = (
 			<div>
@@ -29,13 +28,8 @@ const Content = (props) => {
 			</div>
 		)
 	}
-	let contentClass = classnames({
-		"content": true,
-		"dark": props.page !== 'summary',
-		"text": props.page === 'summary'
-	})
 	return (
-		<div id="content" className={contentClass}>
+		<div id="content" className={`${styles.content} ${props.page === 'summary' ? styles.text : styles.dark}`}>
 			{content}
 		</div>
 	)
