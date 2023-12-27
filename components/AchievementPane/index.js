@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import { Context } from '../../pages/appContext'
+import { Context } from '../../utils/appContext'
 import SideNav from '../SideNav'
 import Header from './Header'
 import nav from '../../data/navigation.json'

@@ -1,5 +1,5 @@
 import React, {useContext, useRef} from 'react';
-import { Context } from '../../pages/appContext'
+import { Context } from '../../utils/appContext'
 import styles from './chat.module.scss'
 
 const Chat = (props) => {

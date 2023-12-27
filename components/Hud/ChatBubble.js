@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styles from './chat.module.scss'
-import {Context} from '../../pages/appContext'
+import {Context} from '../../utils/appContext'
 
 const ChatBubble = (props) => {
 	const { state } = useContext(Context);

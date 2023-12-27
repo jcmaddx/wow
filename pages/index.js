@@ -8,7 +8,7 @@ import Hud from '../components/Hud'
 import Loading from '../components/Loading'
 import GetNew from '../components/Achievement/GetNew'
 import Landscape from '../components/Landscape'
-import { Context } from './appContext';
+import { Context } from '../utils/appContext';
 
 import chatStyles from '../components/Hud/'
 

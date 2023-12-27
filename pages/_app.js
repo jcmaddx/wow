@@ -1,7 +1,7 @@
 import React from "react";
 import App from "next/app";
 import Router from 'next/router'
-import { Provider } from "./appContext";
+import { Provider } from "../utils/appContext";
 
 import styles from './global.scss'
   

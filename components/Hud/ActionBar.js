@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import styles from './actionBar.module.scss'
-import {Context} from '../../pages/appContext'
+import {Context} from '../../utils/appContext'
 import Icon from '../Icon'
 import skills from '../../data/skills.json'
 const ActionBar = (props) => {
